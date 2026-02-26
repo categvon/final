@@ -1,4 +1,7 @@
-/* RESET */
+/* =========================
+   RESET
+   ========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,34 +14,45 @@ body {
     color: #111;
 }
 
-/* PAGE WRAPPER */
+
+/* =========================
+   PAGE WRAPPER
+   ========================= */
+
 .page-wrapper {
     position: relative;
-    width: 66%;                 /* inner 2/3 width */
-    max-width: 900px;           /* prevents it from getting too wide */
-    margin: 140px auto;         /* more editorial breathing room */
+    width: 72%;                 /* slightly wider than before */
+    max-width: 1100px;          /* prevents over-expansion */
+    margin: 140px auto;         /* generous editorial spacing */
 }
 
-/* SHARED WHITE BOX STYLE */
+
+/* =========================
+   WHITE BOX CONTAINERS
+   ========================= */
+
 .white-box {
     background: white;
-    padding: 60px 70px;
+    padding: 80px 90px;         /* more interior breathing room */
     display: flex;
     position: relative;
 }
 
-/* SEPARATION BETWEEN BOXES */
 .top-box {
-    margin-bottom: 70px;
+    margin-bottom: 80px;
 }
 
 .bottom-box {
-    margin-bottom: 140px;
+    margin-bottom: 160px;
 }
 
-/* MENU COLUMN */
+
+/* =========================
+   MENU COLUMN
+   ========================= */
+
 .menu {
-    width: 180px;
+    width: 200px;               /* slightly wider */
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -56,64 +70,95 @@ body {
     text-decoration: underline;
 }
 
-/* INTRO COLUMN */
+
+/* =========================
+   INTRO CONTENT COLUMN
+   ========================= */
+
 .intro-content {
-    width: 420px;
-    padding-left: 70px;
+    flex: 1;                    /* allows natural expansion */
+    padding-left: 90px;         /* spacing from menu */
 }
 
+/* Headings */
+
 .intro-content h1 {
-    font-size: 30px;
+    font-size: 34px;
     font-weight: 800;
-    margin-bottom: 12px;
-    line-height: 1.2;
+    margin-bottom: 18px;
+    line-height: 1.15;
 }
 
 .intro-content h2 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+    line-height: 1.4;
 }
+
+/* Blue divider line between h2 and paragraph */
+
+.intro-content h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: #2563eb;
+    margin-top: 18px;
+}
+
+/* Paragraph */
 
 .intro-content p {
-    font-size: 15px;
-    line-height: 1.7;
+    font-size: 17px;
+    line-height: 1.85;          /* more editorial rhythm */
+    margin-top: 28px;
+    max-width: 100%;            /* extends close to box edge */
 }
 
-/* ABSTRACT SECTION */
+
+/* =========================
+   ABSTRACT SECTION
+   ========================= */
+
 .abstract-title {
-    width: 180px;
+    width: 200px;
 }
 
 .abstract-title h3 {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
 }
 
 .abstract-text {
-    width: 420px;
-    padding-left: 70px;
+    flex: 1;
+    padding-left: 90px;
 }
 
 .abstract-text p {
-    margin-bottom: 22px;
-    line-height: 1.8;
-    font-size: 15px;
+    margin-bottom: 26px;
+    line-height: 1.9;
+    font-size: 17px;
 }
 
-/* RED LINE — MOVED LEFT */
+
+/* =========================
+   VERTICAL RED LINE
+   ========================= */
+
 .vertical-line {
     position: absolute;
     top: 0;
-    left: 250px;      /* moved left so it sits between columns */
+    left: 310px;                /* slightly moved right */
     width: 2px;
     height: 100%;
     background-color: red;
     z-index: 5;
 }
 
+
 /* =========================
-   MOBILE FIX
+   MOBILE RESPONSIVE
    ========================= */
 
 @media (max-width: 768px) {
