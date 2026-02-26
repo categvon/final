@@ -5,80 +5,108 @@
     box-sizing: border-box;
 }
 
-/* BODY + BACKGROUND */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: url("background.png");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+    font-family: 'Inter', sans-serif;
+    background: url("background.png") center center / cover no-repeat fixed;
     color: #111;
 }
 
-/* MAIN LAYOUT */
-.container {
+/* PAGE WRAPPER */
+.page-wrapper {
+    position: relative;
+    width: 1100px;
+    margin: 60px auto;
+}
+
+/* SHARED WHITE BOX STYLING */
+.top-box,
+.bottom-box {
+    background: white;
     display: flex;
-    min-height: 100vh;
+    padding: 60px;
+    position: relative;
 }
 
-/* SIDEBAR */
-.sidebar {
-    width: 220px;
-    padding: 40px 20px;
+/* SPACE BETWEEN BOXES */
+.top-box {
+    margin-bottom: 0;
 }
 
-.sidebar a {
-    display: block;
-    margin-bottom: 18px;
+.bottom-box {
+    margin-top: 0;
+}
+
+/* MENU */
+.menu {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.menu a {
     text-decoration: none;
-    color: hotpink;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 14px;
+    color: hotpink;
     text-transform: lowercase;
 }
 
-.sidebar a:hover {
+.menu a:hover {
     text-decoration: underline;
 }
 
-/* CONTENT CARD */
-.content {
-    background: #eaeaea;
-    width: 800px;
-    margin: 60px auto;
-    padding: 50px;
-    box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+/* TOP CONTENT */
+.top-content {
+    width: 650px;
+    padding-left: 60px;
 }
 
-/* INTRO SECTION */
-.intro h1 {
+.top-content h1 {
     font-size: 38px;
-    letter-spacing: 1px;
+    font-weight: 800;
     margin-bottom: 10px;
 }
 
-.intro h2 {
-    font-size: 20px;
-    font-weight: normal;
+.top-content h2 {
+    font-size: 18px;
+    font-weight: 400;
     margin-bottom: 20px;
 }
 
-.intro p {
-    font-size: 16px;
+.top-content p {
+    font-size: 15px;
     line-height: 1.6;
 }
 
-/* ABSTRACT SECTION */
-.abstract {
-    margin-top: 60px;
+/* BOTTOM ABSTRACT LAYOUT */
+.abstract-left {
+    width: 250px;
 }
 
-.abstract h3 {
+.abstract-left h3 {
     font-size: 28px;
-    margin-bottom: 20px;
+    font-weight: 700;
 }
 
-.abstract p {
+.abstract-right {
+    width: 650px;
+    padding-left: 60px;
+}
+
+.abstract-right p {
     margin-bottom: 20px;
     line-height: 1.7;
+    font-size: 15px;
+}
+
+/* CONTINUOUS RED LINE */
+.vertical-line {
+    position: absolute;
+    top: 0;
+    left: 310px; /* aligns between left and right columns */
+    width: 3px;
+    height: 100%;
+    background-color: red;
+    z-index: 10;
 }
