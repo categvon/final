@@ -14,40 +14,39 @@ body {
 /* PAGE WRAPPER */
 .page-wrapper {
     position: relative;
-    width: 1100px;
-    margin: 60px auto;
+    width: 900px;              /* smaller width for editorial feel */
+    margin: 120px auto;        /* more top/bottom breathing room */
 }
 
-/* SHARED WHITE BOX STYLING */
-.top-box,
-.bottom-box {
+/* SHARED WHITE BOX */
+.white-box {
     background: white;
+    padding: 70px 80px;        /* generous internal spacing */
     display: flex;
-    padding: 60px;
     position: relative;
 }
 
-/* SPACE BETWEEN BOXES */
+/* SEPARATION BETWEEN BOXES */
 .top-box {
-    margin-bottom: 0;
+    margin-bottom: 60px;       /* visible gap like original */
 }
 
 .bottom-box {
-    margin-top: 0;
+    margin-bottom: 120px;
 }
 
 /* MENU */
 .menu {
-    width: 250px;
+    width: 200px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 18px;
 }
 
 .menu a {
     text-decoration: none;
-    font-weight: 600;
     font-size: 14px;
+    font-weight: 600;
     color: hotpink;
     text-transform: lowercase;
 }
@@ -56,47 +55,48 @@ body {
     text-decoration: underline;
 }
 
-/* TOP CONTENT */
-.top-content {
-    width: 650px;
-    padding-left: 60px;
+/* INTRO CONTENT */
+.intro-content {
+    width: 500px;
+    padding-left: 80px;
 }
 
-.top-content h1 {
-    font-size: 38px;
+.intro-content h1 {
+    font-size: 34px;
     font-weight: 800;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    line-height: 1.2;
 }
 
-.top-content h2 {
-    font-size: 18px;
+.intro-content h2 {
+    font-size: 17px;
     font-weight: 400;
     margin-bottom: 20px;
 }
 
-.top-content p {
+.intro-content p {
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
-/* BOTTOM ABSTRACT LAYOUT */
-.abstract-left {
-    width: 250px;
+/* ABSTRACT LAYOUT */
+.abstract-title {
+    width: 200px;
 }
 
-.abstract-left h3 {
-    font-size: 28px;
+.abstract-title h3 {
+    font-size: 26px;
     font-weight: 700;
 }
 
-.abstract-right {
-    width: 650px;
-    padding-left: 60px;
+.abstract-text {
+    width: 500px;
+    padding-left: 80px;
 }
 
-.abstract-right p {
-    margin-bottom: 20px;
-    line-height: 1.7;
+.abstract-text p {
+    margin-bottom: 22px;
+    line-height: 1.8;
     font-size: 15px;
 }
 
@@ -104,9 +104,10 @@ body {
 .vertical-line {
     position: absolute;
     top: 0;
-    left: 310px; /* aligns between left and right columns */
-    width: 3px;
+    left: 360px;  /* aligns exactly between left and right columns */
+    width: 2px;
     height: 100%;
     background-color: red;
-    z-index: 10;
+    z-index: 5;
 }
+
