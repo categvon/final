@@ -14,30 +14,31 @@ body {
 /* PAGE WRAPPER */
 .page-wrapper {
     position: relative;
-    width: 900px;              /* smaller width for editorial feel */
-    margin: 120px auto;        /* more top/bottom breathing room */
+    width: 66%;                 /* inner 2/3 width */
+    max-width: 900px;           /* prevents it from getting too wide */
+    margin: 140px auto;         /* more editorial breathing room */
 }
 
-/* SHARED WHITE BOX */
+/* SHARED WHITE BOX STYLE */
 .white-box {
     background: white;
-    padding: 70px 80px;        /* generous internal spacing */
+    padding: 60px 70px;
     display: flex;
     position: relative;
 }
 
 /* SEPARATION BETWEEN BOXES */
 .top-box {
-    margin-bottom: 60px;       /* visible gap like original */
+    margin-bottom: 70px;
 }
 
 .bottom-box {
-    margin-bottom: 120px;
+    margin-bottom: 140px;
 }
 
-/* MENU */
+/* MENU COLUMN */
 .menu {
-    width: 200px;
+    width: 180px;
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -55,21 +56,21 @@ body {
     text-decoration: underline;
 }
 
-/* INTRO CONTENT */
+/* INTRO COLUMN */
 .intro-content {
-    width: 500px;
-    padding-left: 80px;
+    width: 420px;
+    padding-left: 70px;
 }
 
 .intro-content h1 {
-    font-size: 34px;
+    font-size: 30px;
     font-weight: 800;
     margin-bottom: 12px;
     line-height: 1.2;
 }
 
 .intro-content h2 {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 400;
     margin-bottom: 20px;
 }
@@ -79,19 +80,19 @@ body {
     line-height: 1.7;
 }
 
-/* ABSTRACT LAYOUT */
+/* ABSTRACT SECTION */
 .abstract-title {
-    width: 200px;
+    width: 180px;
 }
 
 .abstract-title h3 {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 700;
 }
 
 .abstract-text {
-    width: 500px;
-    padding-left: 80px;
+    width: 420px;
+    padding-left: 70px;
 }
 
 .abstract-text p {
@@ -100,11 +101,11 @@ body {
     font-size: 15px;
 }
 
-/* CONTINUOUS RED LINE */
+/* RED LINE — MOVED LEFT */
 .vertical-line {
     position: absolute;
     top: 0;
-    left: 360px;  /* aligns exactly between left and right columns */
+    left: 250px;      /* moved left so it sits between columns */
     width: 2px;
     height: 100%;
     background-color: red;
