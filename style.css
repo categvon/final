@@ -112,3 +112,35 @@ body {
     z-index: 5;
 }
 
+/* =========================
+   MOBILE FIX
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .page-wrapper {
+        width: 92%;
+        margin: 60px auto;
+    }
+
+    .white-box {
+        flex-direction: column;
+        padding: 40px 30px;
+    }
+
+    .menu,
+    .intro-content,
+    .abstract-title,
+    .abstract-text {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .menu {
+        margin-bottom: 30px;
+    }
+
+    .vertical-line {
+        display: none;
+    }
+}
