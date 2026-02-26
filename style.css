@@ -1,0 +1,84 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY + BACKGROUND */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("background.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #111;
+}
+
+/* MAIN LAYOUT */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    padding: 40px 20px;
+}
+
+.sidebar a {
+    display: block;
+    margin-bottom: 18px;
+    text-decoration: none;
+    color: hotpink;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: lowercase;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+/* CONTENT CARD */
+.content {
+    background: #eaeaea;
+    width: 800px;
+    margin: 60px auto;
+    padding: 50px;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+}
+
+/* INTRO SECTION */
+.intro h1 {
+    font-size: 38px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.intro h2 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ABSTRACT SECTION */
+.abstract {
+    margin-top: 60px;
+}
+
+.abstract h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.abstract p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
