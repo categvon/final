@@ -13,8 +13,25 @@ body {
     background: url("images/background2.png") center center / cover no-repeat fixed;
 }
 
+/* Bottom box layout */
+.bottom-box-content {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Left column title */
+.left-label {
+    flex: 0 0 200px;
+}
+
+.left-label h3 {
+    margin-top: 0;
+    font-weight: 700;
+}
+
+/* Job listings styling */
 .job-listings {
-    margin-top: 2rem;
+    flex: 1;
 }
 
 .job-listings h4 {
@@ -71,44 +88,54 @@ body {
     </div>
 
     <div class="white-box bottom-box">
-        <div class="job-listings">
+        <div class="bottom-box-content">
 
-            <h4>Entry-Level Positions</h4>
-            <ul>
-                <li>
-                    <a href="https://jobs-getty.icims.com/jobs/4749/special-collections-archivist-ii/job" target="_blank">
-                        Special Collections Archivist I, Getty
-                    </a>
-                </li>
-            </ul>
+            <!-- LEFT SIDE LABEL -->
+            <div class="left-label">
+                <h3>Active Job Listings</h3>
+            </div>
 
-            <h4>Mid-Level Positions</h4>
-            <ul>
-                <li>
-                    <a href="https://jobs-getty.icims.com/jobs/4749/special-collections-archivist-ii/job" target="_blank">
-                        Special Collections Archivist II, Getty
-                    </a>
-                </li>
-                <li>
-                    <a href="https://joblist.ala.org/jobs/view/special-collections-conservator/82331283/" target="_blank">
-                        Special Collections Conservator, University of Notre Dame
-                    </a>
-                </li>
-            </ul>
+            <!-- RIGHT SIDE JOBS -->
+            <div class="job-listings">
 
-            <h4>Senior-Level Positions</h4>
-            <ul>
-                <li>
-                    <a href="https://joblist.ala.org/jobs/view/head-of-research-and-instruction-hanna-holborn-gray-special-collections-research-center/82212316/" target="_blank">
-                        Head of Research and Instruction, Hanna Holborn Gray Special Collections Research Center
-                    </a>
-                </li>
-                <li>
-                    <a href="https://joblist.ala.org/jobs/function/special/" target="_blank">
-                        Assistant University Librarian for Special Collections, East Carolina University
-                    </a>
-                </li>
-            </ul>
+                <h4>Entry-Level Positions</h4>
+                <ul>
+                    <li>
+                        <a href="https://jobs-getty.icims.com/jobs/4749/special-collections-archivist-ii/job" target="_blank">
+                            Special Collections Archivist I, Getty
+                        </a>
+                    </li>
+                </ul>
+
+                <h4>Mid-Level Positions</h4>
+                <ul>
+                    <li>
+                        <a href="https://jobs-getty.icims.com/jobs/4749/special-collections-archivist-ii/job" target="_blank">
+                            Special Collections Archivist II, Getty
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://joblist.ala.org/jobs/view/special-collections-conservator/82331283/" target="_blank">
+                            Special Collections Conservator, University of Notre Dame
+                        </a>
+                    </li>
+                </ul>
+
+                <h4>Senior-Level Positions</h4>
+                <ul>
+                    <li>
+                        <a href="https://joblist.ala.org/jobs/view/head-of-research-and-instruction-hanna-holborn-gray-special-collections-research-center/82212316/" target="_blank">
+                            Head of Research and Instruction, Hanna Holborn Gray Special Collections Research Center
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://joblist.ala.org/jobs/function/special/" target="_blank">
+                            Assistant University Librarian for Special Collections, East Carolina University
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
 
         </div>
     </div>
@@ -116,6 +143,7 @@ body {
 </div>
 </body>
 </html>
+
 
 
 
