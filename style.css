@@ -179,12 +179,13 @@ body {
         right: 0;
     }
 }
-/* Technical Skills section layout */
+/* Technical Skills layout */
 
 .skills-section {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 4fr;
   column-gap: 2rem;
+  margin-bottom: 3rem;
 }
 
 .skills-label p {
@@ -192,7 +193,35 @@ body {
   text-transform: lowercase;
 }
 
-.skills-content p {
-  margin-bottom: 1.2rem;
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
+
+.skill-item h4 {
+  margin-bottom: 0.3rem;
+}
+
+.skill-item p {
+  margin: 0;
+}
+
+/* Growing skills */
+
+.skills-growth {
+  margin-left: 0;
+}
+
+.growth-label {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.skills-growth-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
 
