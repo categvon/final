@@ -228,3 +228,34 @@ body {
 .skills-content li {
   margin-bottom: 0.4rem;
 }
+/* === Job Listings: Match Technical Skills Design === */
+
+.jobs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 3.5rem; /* FIXES PROBLEM 1 */
+}
+
+.job-block h4 {
+  margin-bottom: 0.6rem;
+}
+
+.job-block p {
+  margin: 0 0 1rem 0;
+  max-width: 60ch;
+}
+
+.job-subhead {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.job-block ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.job-block li {
+  margin-bottom: 0.4rem;
+}
+
