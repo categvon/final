@@ -215,4 +215,36 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
+/* Professional job listings layout */
+
+.jobs-section {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  column-gap: 2rem;
+}
+
+.jobs-label p {
+  font-weight: 700;
+}
+
+.jobs-content p {
+  margin-bottom: 1rem;
+}
+
+.job-entry {
+  margin-bottom: 2.5rem;
+}
+
+.job-entry h4 {
+  margin-bottom: 0.5rem;
+}
+
+.job-entry ul {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+}
+
+.job-entry li {
+  margin-bottom: 0.4rem;
+}
 
