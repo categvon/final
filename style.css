@@ -228,34 +228,59 @@ body {
 .skills-content li {
   margin-bottom: 0.4rem;
 }
-/* === Job Listings: Match Technical Skills Design === */
-
-.jobs-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 3.5rem; /* FIXES PROBLEM 1 */
+.section-box {
+  padding: 3rem 4rem;
+  margin-bottom: 4rem;
 }
 
-.job-block h4 {
+.section-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  column-gap: 3rem;
+  position: relative;
+}
+
+/* red vertical line continues */
+.section-grid::before {
+  content: "";
+  position: absolute;
+  left: 260px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: red;
+}
+
+.section-label p {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.section-content {
+  max-width: 900px;
+}
+
+.section-subhead {
+  margin-bottom: 2rem;
+}
+
+.job-entry h4 {
+  margin-bottom: 0.75rem;
+}
+
+.job-entry p {
+  margin-bottom: 1.25rem;
+}
+
+.job-entry ul {
+  margin-left: 1.2rem;
+}
+
+.job-entry li {
   margin-bottom: 0.6rem;
 }
 
-.job-block p {
-  margin: 0 0 1rem 0;
-  max-width: 60ch;
+/* THIS FIXES YOUR SPACING PROBLEM */
+.job-divider {
+  height: 3rem;
 }
-
-.job-subhead {
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.job-block ul {
-  margin: 0;
-  padding-left: 1.2rem;
-}
-
-.job-block li {
-  margin-bottom: 0.4rem;
-}
-
