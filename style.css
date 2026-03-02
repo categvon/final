@@ -179,5 +179,20 @@ body {
         right: 0;
     }
 }
+/* Technical Skills section layout */
 
+.skills-section {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 2rem;
+}
+
+.skills-label p {
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+.skills-content p {
+  margin-bottom: 1.2rem;
+}
 
