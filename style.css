@@ -355,3 +355,29 @@ body {
     grid-template-columns: 1fr;
   }
 }
+/* HEADER LAYOUT FIX */
+.header-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.header-left h1 {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.1;
+}
+
+.header-left h2 {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.header-right p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
