@@ -179,133 +179,20 @@ body {
         right: 0;
     }
 }
-/* RESET */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Technical Skills section layout */
 
-body {
-  font-family: "Atkinson Hyperlegible", sans-serif;
-  line-height: 1.6;
-  color: #000;
-}
-
-/* BACKGROUND */
-.bg-tech {
-  background: url("images/background5.png") center center / cover no-repeat fixed;
-}
-
-/* LAYOUT */
-.page-wrapper {
-  display: flex;
-  min-height: 100vh;
-}
-
-.sidebar {
-  width: 240px;
-  padding: 40px 20px;
-}
-
-.sidebar a {
-  display: block;
-  color: hotpink;
-  text-decoration: none;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.sidebar a.active {
-  text-decoration: underline;
-}
-
-.content {
-  flex: 1;
-  padding: 60px;
-}
-
-/* WHITE BOXES */
-.white-box {
-  background: white;
-  padding: 60px;
-  margin-bottom: 80px;
-  position: relative;
-  max-width: 1200px;
-}
-
-/* RED VERTICAL LINE */
-.white-box::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 300px;
-  width: 3px;
-  background: red;
-}
-
-/* GRID */
-.box-grid {
+.skills-section {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 60px;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 2rem;
 }
 
-.header-grid {
-  grid-template-columns: 1fr 1fr;
-}
-
-/* TYPOGRAPHY */
-h1 {
-  font-size: 42px;
+.skills-label p {
   font-weight: 700;
+  text-transform: lowercase;
 }
 
-h2 {
-  margin-top: 10px;
-  font-size: 22px;
-  border-bottom: 3px solid #1e5eff;
-  padding-bottom: 8px;
+.skills-content p {
+  margin-bottom: 1.2rem;
 }
 
-h3 {
-  font-size: 28px;
-  font-weight: 700;
-}
-
-h4 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-top: 24px;
-}
-
-p {
-  margin-top: 10px;
-}
-
-ul {
-  margin-top: 12px;
-  margin-left: 20px;
-}
-
-li {
-  margin-bottom: 8px;
-}
-
-/* SKILLS GRID */
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-
-.full-width {
-  grid-column: span 2;
-  margin-top: 40px;
-}
-
-/* SPACING FIX */
-.spacer {
-  height: 40px;
-}
