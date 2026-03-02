@@ -182,15 +182,7 @@ body {
 /* Technical Skills layout */
 
 .skills-section {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  column-gap: 2rem;
   margin-bottom: 3rem;
-}
-
-.skills-label p {
-  font-weight: 700;
-  text-transform: lowercase;
 }
 
 .skills-grid {
@@ -210,7 +202,7 @@ body {
 /* Growing skills */
 
 .skills-growth {
-  margin-left: 0;
+  margin-top: 2rem;
 }
 
 .growth-label {
@@ -223,5 +215,4 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
-
 
