@@ -195,6 +195,20 @@ body {
 .skills-content p {
   margin-bottom: 1.2rem;
 }
+/* Professional Job Listings section */
+
+.job-section {
+  margin-top: 28px;
+}
+
+.job-section ul {
+  margin-top: 10px;
+  margin-left: 18px;
+}
+
+.job-section li {
+  margin-bottom: 8px;
+}
 
 
 
