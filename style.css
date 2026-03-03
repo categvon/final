@@ -209,6 +209,11 @@ body {
 .job-section li {
   margin-bottom: 8px;
 }
+.job-section ul {
+  margin-top: 10px;
+  margin-left: 18px;
+  margin-bottom: 22px;  /* ADD THIS */
+}
 
 
 
