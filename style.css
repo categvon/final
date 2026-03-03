@@ -214,6 +214,9 @@ body {
   margin-left: 18px;
   margin-bottom: 22px;  /* ADD THIS */
 }
+.abstract-text ul {
+  margin-bottom: 32px;
+}
 
 
 
