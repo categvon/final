@@ -212,4 +212,44 @@ body {
 .section-break {
   margin-top: 32px;
 }
+/* =========================
+   INTERVIEW QUESTION STYLE
+   (scoped to this page only)
+   ========================= */
+
+.interview-section {
+    width: 100%;
+}
+
+.interview-item {
+    padding-bottom: 24px;
+    margin-bottom: 28px;
+    border-bottom: 2px solid #2563eb; /* blue divider */
+}
+
+.interview-item:last-child {
+    border-bottom: none;
+}
+
+/* question title */
+.interview-item h4 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+/* timestamp */
+.interview-item .timestamp {
+    color: hotpink;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* text */
+.interview-item p {
+    font-size: 16px;
+    line-height: 1.55;
+    margin-bottom: 12px;
+}
 
