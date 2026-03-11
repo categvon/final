@@ -10,7 +10,7 @@
 
 <style>
 body {
-    background: url("images/background9.png") center center / cover no-repeat fixed;
+    background: url("images/background10.png") center center / cover no-repeat fixed;
 }
 </style>
 </head>
@@ -60,7 +60,43 @@ body {
 </div>
 
 </div>
+    <!-- background artwork preview -->
+<div class="bg-preview" onclick="openSpotlight()">
+    <img src="images/background10.png" alt="Background artwork preview">
+</div>
+
+<!-- spotlight modal -->
+<div class="bg-spotlight" id="spotlight" onclick="closeSpotlight(event)">
+    <img src="images/background10.png" alt="Background artwork">
+
+    <div class="bg-caption">
+        A flyer for a Black Artists Association exhibit held at Galeria Del Sol from July 11 to August 8, 1969.<br><br>
+
+        Knopka, R. (n.d.). <em>Outsiders Welcome: Brockman Gallery</em>.  
+        LAAC Collective.<br>
+        <a href="https://www.laacollective.org/work/outsiders-welcome-brockman-gallery" target="_blank">
+        https://www.laacollective.org/work/outsiders-welcome-brockman-gallery
+        </a>
+    </div>
+</div>
+
+<script>
+function openSpotlight(){
+    const s = document.getElementById("spotlight");
+    s.style.display = "flex";
+    s.classList.add("active");
+}
+
+function closeSpotlight(e){
+    if(e.target.id === "spotlight"){
+        const s = document.getElementById("spotlight");
+        s.style.display = "none";
+        s.classList.remove("active");
+    }
+}
+</script>
 </body>
 </html>
+
 
 
