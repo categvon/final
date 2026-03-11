@@ -264,14 +264,8 @@ body {
     width: 90px;
     cursor: pointer;
     z-index: 3;
-    animation: jiggle 0.6s ease-in-out infinite;
-    animation-delay: 5s;
-    animation-iteration-count: infinite;
-}
 
-/* stop continuous motion */
-.bg-preview:hover {
-    animation-play-state: paused;
+    animation: jiggleCycle 5.6s ease-in-out infinite;
 }
 
 .bg-preview img {
@@ -280,20 +274,25 @@ body {
     border: 1px solid #222;
 }
 
-/* jiggle animation */
-@keyframes jiggle {
+/* pause animation while hovering */
+.bg-preview:hover {
+    animation-play-state: paused;
+}
+
+/* jiggle once then stay still */
+@keyframes jiggleCycle {
 
     0% { transform: rotate(0deg); }
 
-    10% { transform: rotate(-3deg); }
+    3% { transform: rotate(-3deg); }
 
-    20% { transform: rotate(3deg); }
+    6% { transform: rotate(3deg); }
 
-    30% { transform: rotate(-2deg); }
+    9% { transform: rotate(-2deg); }
 
-    40% { transform: rotate(2deg); }
+    12% { transform: rotate(2deg); }
 
-    50% { transform: rotate(0deg); }
+    15% { transform: rotate(0deg); }
 
     100% { transform: rotate(0deg); }
 
@@ -303,12 +302,17 @@ body {
 .bg-spotlight {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.93); /* darker for better contrast */
+    background: rgba(0,0,0,0.93);
     display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     z-index: 100;
+}
+
+/* stop jiggle when spotlight is open */
+.bg-spotlight.active ~ .bg-preview {
+    animation: none;
 }
 
 /* spotlight image */
@@ -321,9 +325,13 @@ body {
 /* caption */
 .bg-caption {
     color: white;
-    font-size: 18px;
+    font-size: 15px;
     max-width: 600px;
     text-align: center;
     line-height: 1.4;
+}
+.bg-caption a {
+    color: white;
+    text-decoration: underline;
 }
 
