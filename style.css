@@ -256,31 +256,61 @@ body {
    BACKGROUND IMAGE SPOTLIGHT
    ========================= */
 
-/* small preview bottom-left */
+/* preview thumbnail bottom-left */
 .bg-preview {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 90px;
+    bottom: 22px;
+    left: 22px;
+    width: 92px;
     cursor: pointer;
     z-index: 3;
+
+    /* subtle hover animation */
+    transition: transform 0.25s ease;
+
+    /* idle jiggle animation */
+    animation: previewJiggle 6s infinite;
 }
 
 .bg-preview img {
     width: 100%;
     display: block;
-    border: 1px solid #222;
+    border: 2px solid #000;
+}
+
+/* hover expansion (image + border expand together) */
+.bg-preview:hover {
+    transform: scale(1.12);
+    animation: none;
+}
+
+/* jiggle animation */
+@keyframes previewJiggle {
+
+    0% { transform: rotate(0deg); }
+
+    2% { transform: rotate(-4deg); }
+    4% { transform: rotate(4deg); }
+    6% { transform: rotate(-3deg); }
+    8% { transform: rotate(3deg); }
+    10% { transform: rotate(0deg); }
+
+    100% { transform: rotate(0deg); }
 }
 
 /* spotlight overlay */
 .bg-spotlight {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.85);
+
+    /* darker overlay for WCAG contrast */
+    background: rgba(0,0,0,0.92);
+
     display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     z-index: 100;
 }
 
@@ -297,6 +327,5 @@ body {
     font-size: 15px;
     max-width: 600px;
     text-align: center;
-    line-height: 1.4;
+    line-height: 1.45;
 }
-
