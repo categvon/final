@@ -6,7 +6,11 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
+<style>
+body {
+    background: url("images/background5.png") center center / cover no-repeat fixed;
+}
+</style>
 <body>
 
 <div class="page-wrapper">
@@ -176,9 +180,44 @@
   </div>
 
 </div>
+<!-- background artwork preview -->
+<div class="bg-preview" onclick="openSpotlight()">
+    <img src="images/background5.png" alt="Background artwork preview">
+</div>
 
+<!-- spotlight modal -->
+<div class="bg-spotlight" id="spotlight" onclick="closeSpotlight(event)">
+    <img src="images/background5.png" alt="Background artwork">
+
+    <div class="bg-caption">
+        John Riddle at work.<br><br>
+
+        Knopka, R. (n.d.). <em>Outsiders Welcome: Brockman Gallery</em>.  
+        LAAC Collective.<br>
+        <a href="https://www.laacollective.org/work/outsiders-welcome-brockman-gallery" target="_blank">
+        https://www.laacollective.org/work/outsiders-welcome-brockman-gallery
+        </a>
+    </div>
+</div>
+
+<script>
+function openSpotlight(){
+    const s = document.getElementById("spotlight");
+    s.style.display = "flex";
+    s.classList.add("active");
+}
+
+function closeSpotlight(e){
+    if(e.target.id === "spotlight"){
+        const s = document.getElementById("spotlight");
+        s.style.display = "none";
+        s.classList.remove("active");
+    }
+}
+</script>
 </body>
 </html>
+
 
 
 
