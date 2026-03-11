@@ -131,18 +131,21 @@ body {
     font-size: 16px;
 }
 
-/* Top-level lists (align with headings) */
-.abstract-text ul {
-    padding-left: 0;
-    margin-left: 0;
+/* Top-level lists */
+.abstract-text > ul {
     margin-top: 10px;
-    list-style-position: inside;
+    margin-left: 0;
+    padding-left: 28px;
+    list-style-position: outside;
 }
 
-/* Nested lists (indent under subheadings) */
-.abstract-text ul ul {
-    padding-left: 28px;
+/* Nested lists */
+.abstract-text > ul > li > ul {
     margin-top: 8px;
+    margin-left: 0;
+    padding-left: 32px;
+    list-style-type: circle;
+    list-style-position: outside;
 }
 
 /* List spacing */
@@ -702,6 +705,7 @@ body {
 .references em {
     font-style: italic;
 }
+
 
 
 
