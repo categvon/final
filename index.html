@@ -84,18 +84,23 @@ body {
 <script>
 
 function openSpotlight(){
-    document.getElementById("spotlight").style.display = "flex";
+    const s = document.getElementById("spotlight");
+    s.style.display = "flex";
+    s.classList.add("active");
 }
 
 function closeSpotlight(e){
     if(e.target.id === "spotlight"){
-        document.getElementById("spotlight").style.display = "none";
+        const s = document.getElementById("spotlight");
+        s.style.display = "none";
+        s.classList.remove("active");
     }
 }
 
 </script>
 </body>
 </html>
+
 
 
 
