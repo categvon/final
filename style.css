@@ -129,17 +129,19 @@ body {
     margin-bottom: 18px;
     line-height: 1.5;
     font-size: 16px;
-   /* Lists inside abstract sections (Professional Ecosystem, etc.) */
+}
+
+/* Lists inside abstract sections (Professional Ecosystem, etc.) */
 .abstract-text ul {
     padding-left: 0;
     margin-left: 0;
     margin-top: 10px;
+    list-style-position: inside;
 }
 
 .abstract-text li {
     margin-bottom: 8px;
     line-height: 1.6;
-}
 }
 
 /* =========================
@@ -354,5 +356,6 @@ body {
         animation: none !important; /* stop any animation */
     }
 }
+
 
 
