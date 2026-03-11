@@ -375,12 +375,22 @@ body {
     list-style-position: outside;
 }
 
-.takeaways-list > li {
+/* =========================
+   KEY TAKEAWAYS LIST ONLY
+   ========================= */
+.intro-content .takeaways-list {
+    margin-top: 10px;
+    margin-left: 0;
+    padding-left: 28px;
+    list-style-position: outside;
+}
+
+.intro-content .takeaways-list > li {
     margin-bottom: 8px;
     line-height: 1.6;
 }
 
-.takeaways-list > li > ul {
+.intro-content .takeaways-list > li > ul {
     margin-top: 8px;
     margin-left: 0;
     padding-left: 32px;
@@ -388,7 +398,7 @@ body {
     list-style-position: outside;
 }
 
-.takeaways-list > li > ul > li {
+.intro-content .takeaways-list > li > ul > li {
     margin-bottom: 6px;
     line-height: 1.6;
 }
