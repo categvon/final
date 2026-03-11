@@ -53,6 +53,42 @@ body {
 </div>
 
 </div>
+    <!-- background artwork preview -->
+<div class="bg-preview" onclick="openSpotlight()">
+    <img src="images/background7.png" alt="Background artwork preview">
+</div>
+
+<!-- spotlight modal -->
+<div class="bg-spotlight" id="spotlight" onclick="closeSpotlight(event)">
+    <img src="images/background7.png" alt="Background artwork">
+
+    <div class="bg-caption">
+        A Brockman Gallery flyer for a 1970 David Hammons exhibit.<br><br>
+
+        Knopka, R. (n.d.). <em>Outsiders Welcome: Brockman Gallery</em>.  
+        LAAC Collective.<br>
+        <a href="https://www.laacollective.org/work/outsiders-welcome-brockman-gallery" target="_blank">
+        https://www.laacollective.org/work/outsiders-welcome-brockman-gallery
+        </a>
+    </div>
+</div>
+
+<script>
+function openSpotlight(){
+    const s = document.getElementById("spotlight");
+    s.style.display = "flex";
+    s.classList.add("active");
+}
+
+function closeSpotlight(e){
+    if(e.target.id === "spotlight"){
+        const s = document.getElementById("spotlight");
+        s.style.display = "none";
+        s.classList.remove("active");
+    }
+}
+</script>
 </body>
 
 </html>
+
