@@ -368,3 +368,27 @@ body {
         animation: none !important;
     }
 }
+.takeaways-list {
+    margin-top: 10px;
+    margin-left: 0;
+    padding-left: 28px;
+    list-style-position: outside;
+}
+
+.takeaways-list > li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.takeaways-list > li > ul {
+    margin-top: 8px;
+    margin-left: 0;
+    padding-left: 32px;
+    list-style-type: circle;
+    list-style-position: outside;
+}
+
+.takeaways-list > li > ul > li {
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
