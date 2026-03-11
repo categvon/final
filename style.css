@@ -334,4 +334,13 @@ body {
     color: white;
     text-decoration: underline;
 }
+/* =========================
+   DISABLE THUMBNAIL & ANIMATION ON MOBILE
+   ========================= */
+@media (max-width: 900px) {
+    .bg-preview {
+        display: none !important;  /* hide thumbnail */
+        animation: none !important; /* stop any animation */
+    }
+}
 
