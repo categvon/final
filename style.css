@@ -131,6 +131,12 @@ body {
     font-size: 16px;
 }
 
+.abstract-text img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* Top-level lists */
 .abstract-text > ul {
     margin-top: 10px;
@@ -168,403 +174,46 @@ body {
 }
 
 /* =========================
-   MOBILE
+   TECHNICAL SKILLS SECTION
    ========================= */
-@media (max-width: 900px) {
-    .page-wrapper {
-        width: 90%;
-        margin: 56px auto;
-    }
-
-    .white-box {
-        flex-direction: column;
-        padding: 24px;
-    }
-
-    .menu,
-    .intro-content,
-    .abstract-title,
-    .abstract-text {
-        width: 100%;
-        padding-left: 0;
-        margin-top: 0;
-    }
-
-    .menu {
-        margin-bottom: 18px;
-    }
-
-    .vertical-line {
-        display: none;
-    }
-
-    .intro-content h2::after {
-        right: 0;
-    }
-}
-/* Technical Skills section layout */
-
 .skills-section {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  column-gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    column-gap: 2rem;
 }
 
 .skills-label p {
-  font-weight: 700;
-  text-transform: lowercase;
-}
-
-.skills-content p {
-  margin-bottom: 1.2rem;
-}
-/* Professional Job Listings section */
-
-.job-section {
-  margin-top: 28px;
-}
-
-.job-section ul {
-  margin-top: 10px;
-  margin-left: 18px;
-}
-
-.job-section li {
-  margin-bottom: 8px;
-}
-.section-break {
-  margin-top: 32px;
-}
-/* =========================
-   INTERVIEW QUESTION STYLE
-   (scoped to this page only)
-   ========================= */
-
-.interview-section {
-    width: 100%;
-}
-
-.interview-item {
-    padding-bottom: 24px;
-    margin-bottom: 28px;
-    border-bottom: 2px solid #2563eb; /* blue divider */
-}
-
-.interview-item:last-child {
-    border-bottom: none;
-}
-
-/* question title */
-.interview-item h4 {
-    font-size: 22px;
     font-weight: 700;
-    margin-bottom: 6px;
-}
-
-/* timestamp */
-.interview-item .timestamp {
-    color: hotpink;
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-
-/* text */
-.interview-item p {
-    font-size: 16px;
-    line-height: 1.55;
-    margin-bottom: 12px;
-}
-/* =========================
-   BACKGROUND IMAGE SPOTLIGHT
-   ========================= */
-
-/* small preview bottom-left */
-.bg-preview {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 90px;
-    cursor: pointer;
-    z-index: 3;
-
-    animation: jiggleCycle 5.6s ease-in-out infinite;
-}
-
-.bg-preview img {
-    width: 100%;
-    display: block;
-    border: 1px solid #222;
-}
-
-/* pause animation while hovering */
-.bg-preview:hover {
-    animation-play-state: paused;
-}
-
-/* jiggle once then stay still */
-@keyframes jiggleCycle {
-
-    0% { transform: rotate(0deg); }
-
-    3% { transform: rotate(-3deg); }
-
-    6% { transform: rotate(3deg); }
-
-    9% { transform: rotate(-2deg); }
-
-    12% { transform: rotate(2deg); }
-
-    15% { transform: rotate(0deg); }
-
-    100% { transform: rotate(0deg); }
-
-}
-
-/* spotlight overlay */
-.bg-spotlight {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.93);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 100;
-}
-
-/* stop jiggle when spotlight is open */
-.bg-spotlight.active ~ .bg-preview {
-    animation: none;
-}
-
-/* spotlight image */
-.bg-spotlight img {
-    max-width: 70%;
-    max-height: 70vh;
-    margin-bottom: 16px;
-}
-
-/* caption */
-.bg-caption {
-    color: white;
-    font-size: 15px;
-    max-width: 600px;
-    text-align: center;
-    line-height: 1.4;
-}
-.bg-caption a {
-    color: white;
-    text-decoration: underline;
-}
-/* =========================
-   DISABLE THUMBNAIL & ANIMATION ON MOBILE
-   ========================= */
-@media (max-width: 900px) {
-    .bg-preview {
-        display: none !important;  /* hide thumbnail */
-        animation: none !important; /* stop any animation */
-    }
-}    margin-bottom: 36px;
-}
-
-.bottom-box {
-    margin-bottom: 64px;
-}
-
-/* =========================
-   MENU COLUMN (LEFT)
-   ========================= */
-.menu {
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    padding-top: 2px;
-}
-
-.menu a {
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 700;
-    color: hotpink;
     text-transform: lowercase;
 }
 
-.menu a:hover {
-    text-decoration: underline;
-}
-
-/* =========================
-   INTRO CONTENT (RIGHT)
-   ========================= */
-.intro-content {
-    flex: 1;
-    padding-left: 46px;
-    margin-top: -6px;
-}
-
-.intro-content h1 {
-    font-size: 30px;
-    font-weight: 700;
-    margin-bottom: 14px;
-    line-height: 1.15;
-}
-
-.intro-content h2 {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.3;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-/* 🔵 BLUE DIVIDER */
-.intro-content h2::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 2px;
-    background-color: #2563eb;
-}
-
-.intro-content p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-top: 16px;
-    max-width: 100%;
-}
-
-/* =========================
-   ABSTRACT SECTION
-   ========================= */
-.abstract-title {
-    width: 150px;
-    padding-top: 2px;
-}
-
-.abstract-title h3 {
-    font-size: 22px;
-    font-weight: 700;
-}
-
-.abstract-text {
-    flex: 1;
-    padding-left: 46px;
-    margin-top: -6px;
-}
-
-.abstract-text p {
-    margin-bottom: 18px;
-    line-height: 1.5;
-    font-size: 16px;
-}
-.abstract-text img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-/* Lists inside abstract sections (Professional Ecosystem, etc.) */
-.abstract-text ul {
-    padding-left: 0;
-    margin-left: 0;
-    margin-top: 10px;
-    list-style-position: inside;
-}
-
-.abstract-text li {
-    margin-bottom: 8px;
-    line-height: 1.6;
-}
-
-/* =========================
-   VERTICAL RED LINE
-   ========================= */
-.vertical-line {
-    position: absolute;
-    top: 0;
-    left: 200px;
-    width: 2px;
-    height: 100%;
-    background-color: red;
-    z-index: 5;
-}
-
-/* =========================
-   MOBILE
-   ========================= */
-@media (max-width: 900px) {
-    .page-wrapper {
-        width: 90%;
-        margin: 56px auto;
-    }
-
-    .white-box {
-        flex-direction: column;
-        padding: 24px;
-    }
-
-    .menu,
-    .intro-content,
-    .abstract-title,
-    .abstract-text {
-        width: 100%;
-        padding-left: 0;
-        margin-top: 0;
-    }
-
-    .menu {
-        margin-bottom: 18px;
-    }
-
-    .vertical-line {
-        display: none;
-    }
-
-    .intro-content h2::after {
-        right: 0;
-    }
-}
-/* Technical Skills section layout */
-
-.skills-section {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  column-gap: 2rem;
-}
-
-.skills-label p {
-  font-weight: 700;
-  text-transform: lowercase;
-}
-
 .skills-content p {
-  margin-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
 }
-/* Professional Job Listings section */
 
+/* =========================
+   PROFESSIONAL JOB LISTINGS
+   ========================= */
 .job-section {
-  margin-top: 28px;
+    margin-top: 28px;
 }
 
 .job-section ul {
-  margin-top: 10px;
-  margin-left: 18px;
+    margin-top: 10px;
+    margin-left: 18px;
 }
 
 .job-section li {
-  margin-bottom: 8px;
+    margin-bottom: 8px;
 }
+
 .section-break {
-  margin-top: 32px;
+    margin-top: 32px;
 }
+
 /* =========================
    INTERVIEW QUESTION STYLE
-   (scoped to this page only)
    ========================= */
-
 .interview-section {
     width: 100%;
 }
@@ -572,21 +221,19 @@ body {
 .interview-item {
     padding-bottom: 24px;
     margin-bottom: 28px;
-    border-bottom: 2px solid #2563eb; /* blue divider */
+    border-bottom: 2px solid #2563eb;
 }
 
 .interview-item:last-child {
     border-bottom: none;
 }
 
-/* question title */
 .interview-item h4 {
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 6px;
 }
 
-/* timestamp */
 .interview-item .timestamp {
     color: hotpink;
     font-size: 14px;
@@ -594,17 +241,15 @@ body {
     margin-bottom: 12px;
 }
 
-/* text */
 .interview-item p {
     font-size: 16px;
     line-height: 1.55;
     margin-bottom: 12px;
 }
+
 /* =========================
    BACKGROUND IMAGE SPOTLIGHT
    ========================= */
-
-/* small preview bottom-left */
 .bg-preview {
     position: fixed;
     bottom: 20px;
@@ -612,7 +257,6 @@ body {
     width: 90px;
     cursor: pointer;
     z-index: 3;
-
     animation: jiggleCycle 5.6s ease-in-out infinite;
 }
 
@@ -622,31 +266,20 @@ body {
     border: 1px solid #222;
 }
 
-/* pause animation while hovering */
 .bg-preview:hover {
     animation-play-state: paused;
 }
 
-/* jiggle once then stay still */
 @keyframes jiggleCycle {
-
     0% { transform: rotate(0deg); }
-
     3% { transform: rotate(-3deg); }
-
     6% { transform: rotate(3deg); }
-
     9% { transform: rotate(-2deg); }
-
     12% { transform: rotate(2deg); }
-
     15% { transform: rotate(0deg); }
-
     100% { transform: rotate(0deg); }
-
 }
 
-/* spotlight overlay */
 .bg-spotlight {
     position: fixed;
     inset: 0;
@@ -658,19 +291,16 @@ body {
     z-index: 100;
 }
 
-/* stop jiggle when spotlight is open */
 .bg-spotlight.active ~ .bg-preview {
     animation: none;
 }
 
-/* spotlight image */
 .bg-spotlight img {
     max-width: 70%;
     max-height: 70vh;
     margin-bottom: 16px;
 }
 
-/* caption */
 .bg-caption {
     color: white;
     font-size: 15px;
@@ -678,26 +308,18 @@ body {
     text-align: center;
     line-height: 1.4;
 }
+
 .bg-caption a {
     color: white;
     text-decoration: underline;
 }
-/* =========================
-   DISABLE THUMBNAIL & ANIMATION ON MOBILE
-   ========================= */
-@media (max-width: 900px) {
-    .bg-preview {
-        display: none !important;  /* hide thumbnail */
-        animation: none !important; /* stop any animation */
-    }
-}
+
 /* =========================
    REFERENCES (APA STYLE)
    ========================= */
-
 .references p {
-    text-indent: -1.5em;   /* pulls first line left */
-    margin-left: 1.5em;    /* pushes remaining lines right */
+    text-indent: -1.5em;
+    margin-left: 1.5em;
     margin-bottom: 14px;
     line-height: 1.6;
 }
@@ -706,11 +328,43 @@ body {
     font-style: italic;
 }
 
+/* =========================
+   MOBILE
+   ========================= */
+@media (max-width: 900px) {
+    .page-wrapper {
+        width: 90%;
+        margin: 56px auto;
+    }
 
+    .white-box {
+        flex-direction: column;
+        padding: 24px;
+    }
 
+    .menu,
+    .intro-content,
+    .abstract-title,
+    .abstract-text {
+        width: 100%;
+        padding-left: 0;
+        margin-top: 0;
+    }
 
+    .menu {
+        margin-bottom: 18px;
+    }
 
+    .vertical-line {
+        display: none;
+    }
 
+    .intro-content h2::after {
+        right: 0;
+    }
 
-
-
+    .bg-preview {
+        display: none !important;
+        animation: none !important;
+    }
+}
