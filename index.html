@@ -61,9 +61,40 @@ body {
 
     </div>
 </div>
+<!-- background artwork preview -->
+<div class="bg-preview" onclick="openSpotlight()">
+    <img src="images/background1.png" alt="Background artwork preview">
+</div>
 
+<!-- spotlight modal -->
+<div class="bg-spotlight" id="spotlight" onclick="closeSpotlight(event)">
+    <img src="images/background1.png" alt="Background artwork">
+
+    <div class="bg-caption">
+        <strong>Contemporary Black Imagery</strong>, c.1970.<br>
+        Exhibition flyer for the Brockman Gallery.<br><br>
+        Knopka, R. (n.d.). <em>Outsiders Welcome: Brockman Gallery</em>.  
+        LAAC Collective.<br>
+        https://www.laacollective.org/work/outsiders-welcome-brockman-gallery
+    </div>
+</div>
+
+<script>
+
+function openSpotlight(){
+    document.getElementById("spotlight").style.display = "flex";
+}
+
+function closeSpotlight(e){
+    if(e.target.id === "spotlight"){
+        document.getElementById("spotlight").style.display = "none";
+    }
+}
+
+</script>
 </body>
 </html>
+
 
 
 
