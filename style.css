@@ -256,61 +256,58 @@ body {
    BACKGROUND IMAGE SPOTLIGHT
    ========================= */
 
-/* preview thumbnail bottom-left */
+/* small preview bottom-left */
 .bg-preview {
     position: fixed;
-    bottom: 22px;
-    left: 22px;
-    width: 92px;
+    bottom: 20px;
+    left: 20px;
+    width: 90px;
     cursor: pointer;
     z-index: 3;
+    animation: jiggle 0.6s ease-in-out infinite;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+}
 
-    /* subtle hover animation */
-    transition: transform 0.25s ease;
-
-    /* idle jiggle animation */
-    animation: previewJiggle 6s infinite;
+/* stop continuous motion */
+.bg-preview:hover {
+    animation-play-state: paused;
 }
 
 .bg-preview img {
     width: 100%;
     display: block;
-    border: 2px solid #000;
-}
-
-/* hover expansion (image + border expand together) */
-.bg-preview:hover {
-    transform: scale(1.12);
-    animation: none;
+    border: 1px solid #222;
 }
 
 /* jiggle animation */
-@keyframes previewJiggle {
+@keyframes jiggle {
 
     0% { transform: rotate(0deg); }
 
-    2% { transform: rotate(-4deg); }
-    4% { transform: rotate(4deg); }
-    6% { transform: rotate(-3deg); }
-    8% { transform: rotate(3deg); }
-    10% { transform: rotate(0deg); }
+    10% { transform: rotate(-3deg); }
+
+    20% { transform: rotate(3deg); }
+
+    30% { transform: rotate(-2deg); }
+
+    40% { transform: rotate(2deg); }
+
+    50% { transform: rotate(0deg); }
 
     100% { transform: rotate(0deg); }
+
 }
 
 /* spotlight overlay */
 .bg-spotlight {
     position: fixed;
     inset: 0;
-
-    /* darker overlay for WCAG contrast */
-    background: rgba(0,0,0,0.92);
-
+    background: rgba(0,0,0,0.93); /* darker for better contrast */
     display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
     z-index: 100;
 }
 
@@ -324,8 +321,9 @@ body {
 /* caption */
 .bg-caption {
     color: white;
-    font-size: 15px;
+    font-size: 18px;
     max-width: 600px;
     text-align: center;
-    line-height: 1.45;
+    line-height: 1.4;
 }
+
