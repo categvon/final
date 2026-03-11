@@ -460,11 +460,9 @@ body {
 }
 .abstract-text img {
     width: 100%;
-    max-width: 100%;
+    max-width: 520px;
     height: auto;
     display: block;
-    margin-top: 12px;
-    margin-bottom: 28px;
 }
 /* Lists inside abstract sections (Professional Ecosystem, etc.) */
 .abstract-text ul {
@@ -705,6 +703,7 @@ body {
 .references em {
     font-style: italic;
 }
+
 
 
 
