@@ -684,6 +684,20 @@ body {
         animation: none !important; /* stop any animation */
     }
 }
+/* =========================
+   REFERENCES (APA STYLE)
+   ========================= */
+
+.references p {
+    text-indent: -1.5em;   /* pulls first line left */
+    margin-left: 1.5em;    /* pushes remaining lines right */
+    margin-bottom: 14px;
+    line-height: 1.6;
+}
+
+.references em {
+    font-style: italic;
+}
 
 
 
