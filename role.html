@@ -28,95 +28,81 @@ body {
 .abstract-text a:hover {
     opacity: 0.7;
 }
-
-.white-box {
-    padding: 20px;
-    margin: 20px;
-}
-
-.graph-box {
-    width: 100%;
-    height: 500px; /* Increased height to provide more space */
-    margin-top: 2rem;
-}
-
-@media screen and (max-width: 768px) {
-    .graph-box {
-        height: 300px; /* Reduce height on smaller screens */
-    }
-}
 </style>
 </head>
 
 <body>
 <div class="page-wrapper">
-    <div class="vertical-line"></div>
+<div class="vertical-line"></div>
 
-    <div class="white-box top-box">
-        <div class="menu">
-            <a href="index.html">overview</a>
-            <a href="role.html">the role</a>
-            <a href="ecological-landscape.html">ecological landscape interview</a>
-            <a href="professional-context.html">professional context</a>
-            <a href="technical-skills-training.html">technical skills & training</a>
-            <a href="labor-job-market.html">labor & job market</a>
-            <a href="ai-future.html">ai & the future</a>
-            <a href="annotated-resources.html">annotated resources</a>
-            <a href="contributions.html">contributions</a>
-            <a href="references.html">references</a>
-        </div>
+<div class="white-box top-box">
+<div class="menu">
+    <a href="index.html">overview</a>
+    <a href="role.html">the role</a>
+    <a href="ecological-landscape.html">ecological landscape interview</a>
+    <a href="professional-context.html">professional context</a>
+    <a href="technical-skills-training.html">technical skills & training</a>
+    <a href="labor-job-market.html">labor & job market</a>
+    <a href="ai-future.html">ai & the future</a>
+    <a href="annotated-resources.html">annotated resources</a>
+    <a href="contributions.html">contributions</a>
+    <a href="references.html">references</a>
+</div>
 
-        <div class="intro-content">
-            <h1>PROFESSIONAL ROLE</h1>
-            <h2>Job Description</h2>
-            <p>The Principal Librarian, Research & Special Collections role at the Los Angeles Public Library is a senior leadership position that involves overseeing rare books, archives, and digital collections within a public library system. The duties associated with this specialization include library administration, archival stewardship, grant development, exhibitions and programming, and technology and systems management.</p>
-        </div>
-    </div>
+<div class="intro-content">
+<h1>PROFESSIONAL ROLE</h1>
+<h2>Job Description</h2>
+<p>The Principal Librarian, Research & Special Collections role at the Los Angeles Public Library is a senior leadership position that involves overseeing rare books, archives, and digital collections within a public library system. The duties associated with this specialization include library administration, archival stewardship, grant development, exhibitions and programming, and technology and systems management.
+</p>
+</div>
+</div>
 
-    <div class="white-box bottom-box">
-        <div class="abstract-title">
-            <h3>Job Listings</h3>
-        </div>
+<div class="white-box bottom-box">
+<div class="abstract-title">
+<h3>Job Listings</h3>
+</div>
 
-        <div class="abstract-text">
-            <h4>Entry-Level Positions</h4>
-            <p>
-                <a href="https://jobs-getty.icims.com/jobs/4749/special-collections-archivist-ii/job" target="_blank">
-                    Special Collections Archivist I, Getty
-                </a>
-            </p>
+<div class="abstract-text">
 
-            <h4>Mid-Level Positions</h4>
-            <p>
-                <a href="https://jobs-getty.icims.com/jobs/4749/special-collections-archivist-ii/job" target="_blank">
-                    Special Collections Archivist II, Getty
-                </a>
-            </p>
+    <h4>Entry-Level Positions</h4>
+    <p>
+        <a href="https://jobs-getty.icims.com/jobs/4749/special-collections-archivist-ii/job" target="_blank">
+            Special Collections Archivist I, Getty
+        </a>
+    </p>
 
-            <p>
-                <a href="https://joblist.ala.org/jobs/view/special-collections-conservator/82331283/" target="_blank">
-                    Special Collections Conservator, University of Notre Dame
-                </a>
-            </p>
+    <h4>Mid-Level Positions</h4>
+    <p>
+        <a href="https://jobs-getty.icims.com/jobs/4749/special-collections-archivist-ii/job" target="_blank">
+            Special Collections Archivist II, Getty
+        </a>
+    </p>
 
-            <h4>Senior-Level Positions</h4>
-            <p>
-                <a href="https://joblist.ala.org/jobs/view/head-of-research-and-instruction-hanna-holborn-gray-special-collections-research-center/82212316/" target="_blank">
-                    Head of Research and Instruction, Hanna Holborn Gray Special Collections Research Center
-                </a>
-            </p>
+    <p>
+        <a href="https://joblist.ala.org/jobs/view/special-collections-conservator/82331283/" target="_blank">
+            Special Collections Conservator, University of Notre Dame
+        </a>
+    </p>
 
-            <p>
-                <a href="https://joblist.ala.org/jobs/function/special/" target="_blank">
-                    Assistant University Librarian for Special Collections, East Carolina University
-                </a>
-            </p>
-        </div>
-    </div>
+    <h4>Senior-Level Positions</h4>
+    <p>
+        <a href="https://joblist.ala.org/jobs/view/head-of-research-and-instruction-hanna-holborn-gray-special-collections-research-center/82212316/" target="_blank">
+            Head of Research and Instruction, Hanna Holborn Gray Special Collections Research Center
+        </a>
+    </p>
 
-    <div class="white-box graph-box">
-        <div id="role-graph"></div>
-    </div>
+    <p>
+        <a href="https://joblist.ala.org/jobs/function/special/" target="_blank">
+            Assistant University Librarian for Special Collections, East Carolina University
+        </a>
+    </p>
+
+</div>
+</div>
+
+<div class="white-box graph-box">
+<div id="role-graph"></div>
+</div>
 
 </div>
 
@@ -158,10 +144,10 @@ function closeSpotlight(e){
 <script>
 const cy = cytoscape({
   container: document.getElementById('role-graph'),
-  zoomingEnabled: true,
-  userZoomingEnabled: true,
-  panningEnabled: true,
-  userPanningEnabled: true,
+  zoomingEnabled: false,
+  userZoomingEnabled: false,
+  panningEnabled: false,
+  userPanningEnabled: false,
   boxSelectionEnabled: false,
   elements: {
     nodes: [
@@ -185,7 +171,10 @@ const cy = cytoscape({
       { data: { id: 'technology management', type: 'activity' } },
       { data: { id: 'Los Angeles Public Library', type: 'institution' } },
       { data: { id: 'East Carolina University', type: 'institution' } },
-      { data: { id: 'Getty Research Institute', type: 'institution' } }
+      { data: { id: 'Getty Research Institute', type: 'institution' } },
+      { data: { id: 'Library Director', type: 'institution' } },
+      { data: { id: 'Senior Management Team', type: 'institution' } },
+      { data: { id: 'Archivist III', type: 'institution' } }
     ],
     edges: [
       { data: { source: 'Principal Librarian', target: 'senior-level role', label: 'is a' } },
