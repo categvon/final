@@ -7,6 +7,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/cytoscape@3.26.0/dist/cytoscape.min.js"></script>
 
 <style>
 body {
@@ -102,7 +103,9 @@ body {
 </div>
 </div>
 </div>
-
+<div class="white-box graph-box">
+<div id="role-graph"></div>
+</div>
 </div>
     </div>
 </div>
@@ -142,11 +145,91 @@ function closeSpotlight(e){
     }
 }
 </script>
+<script>
 
+const cy = cytoscape({
+
+container: document.getElementById('role-graph'),
+
+elements: {
+
+nodes: [
+{ data: { id: 'Principal Librarian' } },
+{ data: { id: 'rare books' } },
+{ data: { id: 'archives' } },
+{ data: { id: 'digital collections' } },
+{ data: { id: 'public library system' } },
+{ data: { id: 'library administration' } },
+{ data: { id: 'archival stewardship' } },
+{ data: { id: 'grant development' } },
+{ data: { id: 'exhibitions' } },
+{ data: { id: 'technology systems' } },
+{ data: { id: 'Getty' } },
+{ data: { id: 'University of Notre Dame' } },
+{ data: { id: 'East Carolina University' } }
+],
+
+edges: [
+{ data: { source: 'Principal Librarian', target: 'rare books', label: 'oversees' } },
+{ data: { source: 'Principal Librarian', target: 'archives', label: 'oversees' } },
+{ data: { source: 'Principal Librarian', target: 'digital collections', label: 'oversees' } },
+{ data: { source: 'Principal Librarian', target: 'public library system', label: 'works in' } },
+{ data: { source: 'Principal Librarian', target: 'library administration', label: 'involves' } },
+{ data: { source: 'Principal Librarian', target: 'archival stewardship', label: 'involves' } },
+{ data: { source: 'Principal Librarian', target: 'grant development', label: 'involves' } },
+{ data: { source: 'Principal Librarian', target: 'exhibitions', label: 'organizes' } },
+{ data: { source: 'Principal Librarian', target: 'technology systems', label: 'manages' } },
+
+{ data: { source: 'Getty', target: 'archives', label: 'employs archivists' } },
+{ data: { source: 'University of Notre Dame', target: 'archives', label: 'maintains' } },
+{ data: { source: 'East Carolina University', target: 'archives', label: 'maintains' } }
+]
+
+},
+
+style: [
+
+{
+selector: 'node',
+style: {
+'label': 'data(id)',
+'background-color': '#2563eb',
+'text-valign': 'center',
+'text-halign': 'center',
+'color': '#000',
+'font-size': '11px',
+'width': 'label',
+'padding': '10px'
+}
+},
+
+{
+selector: 'edge',
+style: {
+'label': 'data(label)',
+'curve-style': 'bezier',
+'target-arrow-shape': 'triangle',
+'line-color': '#999',
+'target-arrow-color': '#999',
+'font-size': '9px'
+}
+}
+
+],
+
+layout: {
+name: 'cose',
+padding: 40
+}
+
+});
+
+</script>
 </body>
 </html>
 </body>
 </html>
+
 
 
 
