@@ -1,222 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Technical Skills & Training</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
-</head>
+<meta charset="UTF-8">
+<title>Technical Skills & Training</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/cytoscape@3.26.0/dist/cytoscape.min.js"></script>
+
 <style>
-body {
-    background: url("images/background5.png") center center / cover no-repeat fixed;
+
+body{
+background: url("images/background5.png") center center / cover no-repeat fixed;
 }
+
+/* graph container */
+
+#skills-graph{
+width:100%;
+height:520px;
+}
+
+/* graph white box padding */
+
+.graph-box{
+padding:40px;
+}
+
 </style>
+</head>
+
 <body>
 
 <div class="page-wrapper">
 
-  <!-- =====================
-       TOP WHITE BOX
-  ====================== -->
-  <div class="white-box top-box">
+<!-- =====================
+TOP WHITE BOX
+===================== -->
 
-    <nav class="menu">
-      <a href="index.html">overview</a>
-      <a href="role.html">the role</a>
-      <a href="ecological-landscape.html">ecological landscape</a>
-      <a href="professional-context.html">professional context</a>
-      <a href="technical-skills-training.html">technical skills & training</a>
-      <a href="labor-job-market.html">labor & job market</a>
-      <a href="ai-future.html">ai & the future</a>
-      <a href="annotated-resources.html">annotated resources</a>
-      <a href="contributions.html">contributions</a>
-      <a href="references.html">references</a>
-    </nav>
+<div class="white-box top-box">
 
-    <div class="vertical-line"></div>
+<nav class="menu">
+<a href="index.html">overview</a>
+<a href="role.html">the role</a>
+<a href="ecological-landscape.html">ecological landscape</a>
+<a href="professional-context.html">professional context</a>
+<a href="technical-skills-training.html">technical skills & training</a>
+<a href="labor-job-market.html">labor & job market</a>
+<a href="ai-future.html">ai & the future</a>
+<a href="annotated-resources.html">annotated resources</a>
+<a href="contributions.html">contributions</a>
+<a href="references.html">references</a>
+</nav>
 
-    <div class="intro-content">
-      <h1>TECHNICAL SKILLS & TRAINING</h1>
-      <h2>Entry-Level Expectations & Preparation</h2>
+<div class="vertical-line"></div>
 
-      <p>
-        This technical skill snapshot highlights the kinds of skills needed for entry-level roles in public-facing special collections, where everyday technical decisions shape how collections are cared for and used. It reflects work that supports access behind the scenes, including processing and description, digitization, metadata creation, and visitor services, while also showing how this labor shapes how people encounter collections. The snapshot also points to emerging areas such as digital asset management, introductory coding, and community-centered archival practices.
-      </p>
-    </div>
+<div class="intro-content">
 
-  </div>
+<h1>TECHNICAL SKILLS & TRAINING</h1>
+<h2>Entry-Level Expectations & Preparation</h2>
 
+<p>
+This technical skill snapshot highlights the kinds of skills needed for entry-level roles in public-facing special collections, where everyday technical decisions shape how collections are cared for and used. It reflects work that supports access behind the scenes, including processing and description, digitization, metadata creation, and visitor services, while also showing how this labor shapes how people encounter collections. The snapshot also points to emerging areas such as digital asset management, introductory coding, and community-centered archival practices.
+</p>
 
-  <!-- =====================
-       TECHNICAL SKILLS SNAPSHOT
-  ====================== -->
-  <div class="white-box bottom-box">
-
-    <div class="abstract-title">
-      <h3>Technical Skills</h3>
-    </div>
-
-    <div class="vertical-line"></div>
-
-    <div class="abstract-text">
-
-      <p><strong>Collections Care</strong></p>
-      <p>Entry-level workers support inventory, care, and basic management of collection materials.</p>
-
-      <p><strong>Digitization</strong></p>
-      <p>Knowledge of how materials are digitized to support access and use of collections.</p>
-
-      <p><strong>Visitor Services</strong></p>
-      <p>Technical work is closely tied to patron access and public service.</p>
-
-      <p><strong>Archival Processing</strong></p>
-      <p>Familiarity with finding aids and archival description supports access to archival collections.</p>
-
-      <p><strong>Metadata</strong></p>
-      <p>Descriptive information enables discovery and use of collections.</p>
-
-      <p><strong>Digital Asset Management</strong></p>
-      <p>Awareness of systems used to manage digital collections, including repositories that support organization, storage, preservation, and access to digital assets.</p>
-
-      <p><strong>Coding and Data Skills</strong></p>
-      <p>Basic familiarity with coding languages such as Python can support tasks such as, data cleanup, metadata work, and managing digital collections.</p>
-
-      <p><strong>Professional Development</strong></p>
-      Technical skills are often developed through training, workshops, and professional conferences, allowing staff to build knowledge in areas such as digital preservation and digital collections management.</p>
-
-    </div>
-
-  </div>
+</div>
+</div>
 
 
-  <!-- =====================
-       PROFESSIONAL JOB LISTINGS
-  ====================== -->
-  <div class="white-box bottom-box">
+<!-- =====================
+TECHNICAL SKILLS SNAPSHOT
+===================== -->
 
-    <div class="abstract-title">
-      <h3>Professional Job Listings & Preferred Skills</h3>
-    </div>
+<div class="white-box bottom-box">
 
-    <div class="vertical-line"></div>
+<div class="abstract-title">
+<h3>Technical Skills</h3>
+</div>
 
-    <div class="abstract-text">
+<div class="vertical-line"></div>
 
-      <p>
-        These listings offer real examples of technical skills expected in entry-level special collections work.
-      </p>
+<div class="abstract-text">
 
-      <p><strong>Accessioning Archivist: UCLA Library Special Collections</strong></p>
-      <p>
-        This role focuses on accessioning and stewardship of physical and digital archival collections.
-      </p>
+<p><strong>Collections Care</strong></p>
+<p>Entry-level workers support inventory, care, and basic management of collection materials.</p>
 
-      <p><strong>Responsibilities include:</strong></p>
-      <ul>
-        <li>Accession archival collections, including new acquisitions and backlogs</li>
-        <li>Maintain accession records and documentation</li>
-        <li>Support stewardship of physical and digital archival materials</li>
-        <li>Collaborate with library and collections staff</li>
-      </ul>
+<p><strong>Digitization</strong></p>
+<p>Knowledge of how materials are digitized to support access and use of collections.</p>
 
-      <p class="section-break"><strong>Special Collections Archivist Librarian: Denver Public Library</strong></p>
-      <p>
-        This role involves arranging and describing archival materials across multiple formats,
-        supporting preservation workflows, and providing reference, access, and outreach services.
-      </p>
+<p><strong>Visitor Services</strong></p>
+<p>Technical work is closely tied to patron access and public service.</p>
 
-      <p><strong>Responsibilities include:</strong></p>
-      <ul>
-        <li>Arrange and describe archival materials in multiple formats</li>
-        <li>Support collections management and preservation activities</li>
-        <li>Provide reference, access, and outreach services</li>
-        <li>Apply archival standards within a public library setting</li>
-      </ul>
+<p><strong>Archival Processing</strong></p>
+<p>Familiarity with finding aids and archival description supports access to archival collections.</p>
 
-    </div>
+<p><strong>Metadata</strong></p>
+<p>Descriptive information enables discovery and use of collections.</p>
 
-  </div>
+<p><strong>Digital Asset Management</strong></p>
+<p>Awareness of systems used to manage digital collections.</p>
+
+<p><strong>Coding and Data Skills</strong></p>
+<p>Basic familiarity with coding languages such as Python.</p>
+
+<p><strong>Professional Development</strong></p>
+<p>Skills often develop through training, workshops, and conferences.</p>
+
+</div>
+</div>
 
 
-  <!-- =====================
-       TRAINING AGENDA
-  ====================== -->
-  <div class="white-box bottom-box">
+<!-- =====================
+KNOWLEDGE GRAPH
+===================== -->
 
-    <div class="abstract-title">
-      <h3>Training Agenda</h3>
-    </div>
+<div class="white-box graph-box">
 
-    <div class="vertical-line"></div>
+<div class="abstract-title">
+<h3>Technical Skills Knowledge Graph</h3>
+</div>
 
-    <div class="abstract-text">
-
-      <p>
-        Classes in archival theory, appraisal, arrangement, and description prepare students for processing
-        and access work in special collections.
-      </p>
-
-      <p><strong>Spring 2026 Courses</strong></p>
-
-      <p><strong>439 Seminar: Special Collections</strong></p>
-      <p>Management, description, and access of special collections materials.</p>
-
-      <p><strong>438B Advanced Issues in Archival Science</strong></p>
-      <p>Archival description and access systems.</p>
-
-      <p><strong>464 Metadata</strong></p>
-      <p>Discovery, access, and digital collections infrastructure.</p>
-
-      <p><strong>486 Digital Asset Management</strong></p>
-      <p>Digital collections literacy.</p>
+<div id="skills-graph"></div>
 
 </div>
 
-    </div>
-
-  </div>
-
 </div>
+
+
+
 <!-- background artwork preview -->
+
 <div class="bg-preview" onclick="openSpotlight()">
-    <img src="images/background5.png" alt="Background artwork preview">
+<img src="images/background5.png" alt="Background artwork preview">
 </div>
+
 
 <!-- spotlight modal -->
+
 <div class="bg-spotlight" id="spotlight" onclick="closeSpotlight(event)">
-    <img src="images/background5.png" alt="Background artwork">
+<img src="images/background5.png" alt="Background artwork">
 
-    <div class="bg-caption">
-        John Riddle at work.<br><br>
+<div class="bg-caption">
 
-        Knopka, R. (n.d.). <em>Outsiders Welcome: Brockman Gallery</em>.  
-        LAAC Collective.<br>
-        <a href="https://www.laacollective.org/work/outsiders-welcome-brockman-gallery" target="_blank">
-        https://www.laacollective.org/work/outsiders-welcome-brockman-gallery
-        </a>
-    </div>
+John Riddle at work.<br><br>
+
+Knopka, R. (n.d.). <em>Outsiders Welcome: Brockman Gallery</em>.  
+LAAC Collective.<br>
+
+<a href="https://www.laacollective.org/work/outsiders-welcome-brockman-gallery" target="_blank">
+https://www.laacollective.org/work/outsiders-welcome-brockman-gallery
+</a>
+
+</div>
 </div>
 
+
+
 <script>
+
 function openSpotlight(){
-    const s = document.getElementById("spotlight");
-    s.style.display = "flex";
-    s.classList.add("active");
+const s=document.getElementById("spotlight");
+s.style.display="flex";
+s.classList.add("active");
 }
 
 function closeSpotlight(e){
-    if(e.target.id === "spotlight"){
-        const s = document.getElementById("spotlight");
-        s.style.display = "none";
-        s.classList.remove("active");
-    }
+if(e.target.id==="spotlight"){
+const s=document.getElementById("spotlight");
+s.style.display="none";
+s.classList.remove("active");
 }
+}
+
 </script>
+
+
+<script>
+
+const cy = cytoscape({
+
+container: document.getElementById('skills-graph'),
+
+zoomingEnabled:false,
+userZoomingEnabled:false,
+panningEnabled:false,
+userPanningEnabled:false,
+
+elements:{
+
+nodes:[
+
+{data:{id:'Entry-Level Roles',type:'purple'}},
+{data:{id:'Technical Skills',type:'blue'}},
+
+{data:{id:'Collections Care',type:'yellow'}},
+{data:{id:'Digitization',type:'yellow'}},
+{data:{id:'Visitor Services',type:'yellow'}},
+{data:{id:'Archival Processing',type:'yellow'}},
+{data:{id:'Metadata',type:'yellow'}},
+{data:{id:'Digital Asset Management',type:'yellow'}},
+{data:{id:'Coding Skills',type:'yellow'}},
+{data:{id:'Professional Development',type:'yellow'}},
+
+{data:{id:'Accessioning'}},
+{data:{id:'Archival Standards'}},
+{data:{id:'Preservation'}},
+{data:{id:'Special Collections Archivist'}},
+{data:{id:'Spring Courses'}}
+
+],
+
+edges:[
+
+{data:{source:'Entry-Level Roles',target:'Technical Skills',label:'require'}},
+
+{data:{source:'Technical Skills',target:'Digitization',label:'include'}},
+{data:{source:'Technical Skills',target:'Archival Processing',label:'include'}},
+{data:{source:'Technical Skills',target:'Metadata',label:'include'}},
+{data:{source:'Technical Skills',target:'Coding Skills',label:'include'}},
+{data:{source:'Technical Skills',target:'Collections Care',label:'support'}},
+{data:{source:'Technical Skills',target:'Visitor Services',label:'support'}},
+
+{data:{source:'Spring Courses',target:'Metadata',label:'include'}},
+{data:{source:'Spring Courses',target:'Digital Asset Management',label:'include'}}
+
+]
+
+},
+
+
+
+style:[
+
+{
+selector:'node',
+style:{
+'label':'data(id)',
+'font-family':'Atkinson Hyperlegible',
+'font-size':'12px',
+'text-wrap':'wrap',
+'text-max-width':'90px',
+'text-valign':'center',
+'text-halign':'center',
+'width':70,
+'height':70
+}
+},
+
+{
+selector:'node[type="blue"]',
+style:{
+'background-color':'#529aa5',
+'color':'white'
+}
+},
+
+{
+selector:'node[type="purple"]',
+style:{
+'background-color':'#3c237b',
+'color':'white'
+}
+},
+
+{
+selector:'node[type="yellow"]',
+style:{
+'background-color':'#ffde59',
+'color':'black'
+}
+},
+
+{
+selector:'edge',
+style:{
+'curve-style':'bezier',
+'target-arrow-shape':'triangle',
+'line-color':'#444',
+'target-arrow-color':'#444',
+'label':'data(label)',
+'font-size':'10px',
+'text-margin-y':-8
+}
+}
+
+],
+
+layout:{
+name:'cose',
+padding:50
+}
+
+});
+
+
+/* expand clicked node */
+
+cy.on('tap','node', function(evt){
+
+let node=evt.target;
+
+cy.nodes().forEach(n=>{
+
+n.animate({
+style:{
+width:70,
+height:70,
+'font-size':'12px'
+}
+},{duration:200});
+
+});
+
+node.animate({
+style:{
+width:140,
+height:140,
+'font-size':'16px'
+}
+},{duration:200});
+
+});
+
+</script>
+
 </body>
 </html>
-
-
-
 
 
 
