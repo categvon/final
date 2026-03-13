@@ -6,19 +6,137 @@
 <title>Professional Role</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
 <script src="https://unpkg.com/cytoscape@3.26.0/dist/cytoscape.min.js"></script>
 <script src="https://unpkg.com/cytoscape-cose-bilkent/cytoscape-cose-bilkent.js"></script>
 
 <style>
-body {
-    background: url("images/background2.png") center center / cover no-repeat fixed;
+/* =========================
+   RESET
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.abstract-text h4 {
+body {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    background: url("images/background2.png") center center / cover no-repeat fixed;
+    color: #111;
+}
+
+/* =========================
+   PAGE WRAPPER
+   ========================= */
+.page-wrapper {
+    position: relative;
+    width: 55%;
+    max-width: 820px;
+    margin: 70px auto;
+}
+
+/* =========================
+   WHITE BOX CONTAINERS
+   ========================= */
+.white-box {
+    background: white;
+    padding: 30px;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.top-box { margin-bottom: 36px; }
+.bottom-box { margin-bottom: 64px; }
+
+/* =========================
+   MENU COLUMN (LEFT)
+   ========================= */
+.menu {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 2px;
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 13px;
     font-weight: 700;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+    color: hotpink;
+    text-transform: lowercase;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   INTRO CONTENT (RIGHT)
+   ========================= */
+.intro-content {
+    flex: 1;
+    padding-left: 46px;
+    margin-top: -6px;
+}
+
+.intro-content h1 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    line-height: 1.15;
+}
+
+.intro-content h2 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* BLUE DIVIDER */
+.intro-content h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #2563eb;
+}
+
+.intro-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 16px;
+    max-width: 100%;
+}
+
+/* =========================
+   ABSTRACT SECTION
+   ========================= */
+.abstract-title {
+    width: 150px;
+    padding-top: 2px;
+}
+
+.abstract-title h3 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.abstract-text {
+    flex: 1;
+    padding-left: 46px;
+    margin-top: -6px;
+}
+
+.abstract-text p {
+    margin-bottom: 18px;
+    line-height: 1.5;
+    font-size: 16px;
 }
 
 .abstract-text a {
@@ -26,88 +144,163 @@ body {
     color: #000;
 }
 
-.abstract-text a:hover {
-    opacity: 0.7;
+.abstract-text a:hover { opacity: 0.7; }
+
+.abstract-text img { max-width: 100%; height: auto; display: block; }
+
+/* =========================
+   VERTICAL RED LINE
+   ========================= */
+.vertical-line {
+    position: absolute;
+    top: 0;
+    left: 200px;
+    width: 2px;
+    height: 100%;
+    background-color: red;
+    z-index: 5;
+}
+
+/* =========================
+   JOB LISTINGS
+   ========================= */
+.job-section { margin-top: 28px; }
+.job-section ul { margin-top: 10px; margin-left: 18px; }
+.job-section li { margin-bottom: 8px; }
+.section-break { margin-top: 32px; }
+
+/* =========================
+   BACKGROUND IMAGE SPOTLIGHT
+   ========================= */
+.bg-preview {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 90px;
+    cursor: pointer;
+    z-index: 3;
+    animation: jiggleCycle 5.6s ease-in-out infinite;
+}
+
+.bg-preview img {
+    width: 100%;
+    display: block;
+    border: 1px solid #222;
+}
+
+.bg-preview:hover { animation-play-state: paused; }
+
+@keyframes jiggleCycle {
+    0% { transform: rotate(0deg); }
+    3% { transform: rotate(-3deg); }
+    6% { transform: rotate(3deg); }
+    9% { transform: rotate(-2deg); }
+    12% { transform: rotate(2deg); }
+    15% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.bg-spotlight {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.93);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.bg-spotlight img { max-width: 70%; max-height: 70vh; margin-bottom: 16px; }
+
+.bg-caption {
+    color: white;
+    font-size: 15px;
+    max-width: 600px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.bg-caption a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* =========================
+   GRAPH BOX
+   ========================= */
+.graph-box {
+    display:block;
+    padding:30px;
+    margin-bottom:64px;
+}
+
+#role-graph {
+    width: 100%;
+    height: 600px;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+@media (max-width: 900px) {
+    .page-wrapper { width: 90%; margin: 56px auto; }
+    .white-box { flex-direction: column; padding: 24px; }
+    .menu, .intro-content, .abstract-title, .abstract-text { width: 100%; padding-left: 0; margin-top: 0; }
+    .menu { margin-bottom: 18px; }
+    .vertical-line { display: none; }
+    .intro-content h2::after { right: 0; }
+    .bg-preview { display: none !important; animation: none !important; }
 }
 </style>
 </head>
-
 <body>
+
 <div class="page-wrapper">
-<div class="vertical-line"></div>
+    <div class="vertical-line"></div>
 
-<div class="white-box top-box">
-<div class="menu">
-    <a href="index.html">overview</a>
-    <a href="role.html">the role</a>
-    <a href="ecological-landscape.html">ecological landscape interview</a>
-    <a href="professional-context.html">professional context</a>
-    <a href="technical-skills-training.html">technical skills & training</a>
-    <a href="labor-job-market.html">labor & job market</a>
-    <a href="ai-future.html">ai & the future</a>
-    <a href="annotated-resources.html">annotated resources</a>
-    <a href="contributions.html">contributions</a>
-    <a href="references.html">references</a>
-</div>
+    <div class="white-box top-box">
+        <div class="menu">
+            <a href="index.html">overview</a>
+            <a href="role.html">the role</a>
+            <a href="ecological-landscape.html">ecological landscape interview</a>
+            <a href="professional-context.html">professional context</a>
+            <a href="technical-skills-training.html">technical skills & training</a>
+            <a href="labor-job-market.html">labor & job market</a>
+            <a href="ai-future.html">ai & the future</a>
+            <a href="annotated-resources.html">annotated resources</a>
+            <a href="contributions.html">contributions</a>
+            <a href="references.html">references</a>
+        </div>
 
-<div class="intro-content">
-<h1>PROFESSIONAL ROLE</h1>
-<h2>Job Description</h2>
-<p>The Principal Librarian, Research & Special Collections role at the Los Angeles Public Library is a senior leadership position that involves overseeing rare books, archives, and digital collections within a public library system. The duties associated with this specialization include library administration, archival stewardship, grant development, exhibitions and programming, and technology and systems management.
-</p>
-</div>
-</div>
+        <div class="intro-content">
+            <h1>PROFESSIONAL ROLE</h1>
+            <h2>Job Description</h2>
+            <p>The Principal Librarian, Research & Special Collections role at the Los Angeles Public Library is a senior leadership position that involves overseeing rare books, archives, and digital collections within a public library system. The duties associated with this specialization include library administration, archival stewardship, grant development, exhibitions and programming, and technology and systems management.</p>
+        </div>
+    </div>
 
-<div class="white-box bottom-box">
-<div class="abstract-title">
-<h3>Job Listings</h3>
-</div>
+    <div class="white-box bottom-box">
+        <div class="abstract-title">
+            <h3>Job Listings</h3>
+        </div>
+        <div class="abstract-text">
+            <h4>Entry-Level Positions</h4>
+            <p><a href="https://jobs-getty.icims.com/jobs/4749/special-collections-archivist-ii/job" target="_blank">Special Collections Archivist I, Getty</a></p>
 
-<div class="abstract-text">
+            <h4>Mid-Level Positions</h4>
+            <p><a href="https://jobs-getty.icims.com/jobs/4749/special-collections-archivist-ii/job" target="_blank">Special Collections Archivist II, Getty</a></p>
+            <p><a href="https://joblist.ala.org/jobs/view/special-collections-conservator/82331283/" target="_blank">Special Collections Conservator, University of Notre Dame</a></p>
 
-    <h4>Entry-Level Positions</h4>
+            <h4>Senior-Level Positions</h4>
+            <p><a href="https://joblist.ala.org/jobs/view/head-of-research-and-instruction-hanna-holborn-gray-special-collections-research-center/82212316/" target="_blank">Head of Research and Instruction, Hanna Holborn Gray Special Collections Research Center</a></p>
+            <p><a href="https://joblist.ala.org/jobs/function/special/" target="_blank">Assistant University Librarian for Special Collections, East Carolina University</a></p>
+        </div>
+    </div>
 
-    <p>
-        <a href="https://jobs-getty.icims.com/jobs/4749/special-collections-archivist-ii/job" target="_blank">
-            Special Collections Archivist I, Getty
-        </a>
-    </p>
-
-    <h4>Mid-Level Positions</h4>
-
-    <p>
-        <a href="https://jobs-getty.icims.com/jobs/4749/special-collections-archivist-ii/job" target="_blank">
-            Special Collections Archivist II, Getty
-        </a>
-    </p>
-
-    <p>
-        <a href="https://joblist.ala.org/jobs/view/special-collections-conservator/82331283/" target="_blank">
-            Special Collections Conservator, University of Notre Dame
-        </a>
-    </p>
-
-    <h4>Senior-Level Positions</h4>
-
-    <p>
-        <a href="https://joblist.ala.org/jobs/view/head-of-research-and-instruction-hanna-holborn-gray-special-collections-research-center/82212316/" target="_blank">
-            Head of Research and Instruction, Hanna Holborn Gray Special Collections Research Center
-        </a>
-    </p>
-
-    <p>
-        <a href="https://joblist.ala.org/jobs/function/special/" target="_blank">
-            Assistant University Librarian for Special Collections, East Carolina University
-        </a>
-    </p>
-
-</div>
-</div>
-
-<div class="white-box graph-box">
-<div id="role-graph"></div>
-</div>
-
+    <div class="white-box graph-box">
+        <div id="role-graph"></div>
+    </div>
 </div>
 
 <!-- background artwork preview -->
@@ -118,15 +311,10 @@ body {
 <!-- spotlight modal -->
 <div class="bg-spotlight" id="spotlight" onclick="closeSpotlight(event)">
     <img src="images/background2.png" alt="Background artwork">
-
     <div class="bg-caption">
         A brochure cover for the Leimert Park Festival for the Arts c.1969.<br><br>
-
-        Knopka, R. (n.d.). <em>Outsiders Welcome: Brockman Gallery</em>.  
-        LAAC Collective.<br>
-        <a href="https://www.laacollective.org/work/outsiders-welcome-brockman-gallery" target="_blank">
-        https://www.laacollective.org/work/outsiders-welcome-brockman-gallery
-        </a>
+        Knopka, R. (n.d.). <em>Outsiders Welcome: Brockman Gallery</em>. LAAC Collective.<br>
+        <a href="https://www.laacollective.org/work/outsiders-welcome-brockman-gallery" target="_blank">https://www.laacollective.org/work/outsiders-welcome-brockman-gallery</a>
     </div>
 </div>
 
@@ -144,297 +332,110 @@ function closeSpotlight(e){
         s.classList.remove("active");
     }
 }
+
+document.addEventListener('DOMContentLoaded', function(){
+    const cy = cytoscape({
+        container: document.getElementById('role-graph'),
+        zoomingEnabled: false,
+        userZoomingEnabled: false,
+        panningEnabled: false,
+        userPanningEnabled: false,
+        boxSelectionEnabled: false,
+        elements: {
+            nodes: [
+                { data: { id: 'Principal Librarian', type:'role'} },
+                { data: { id: 'Assistant University Librarian', type:'role'} },
+                { data: { id: 'Special Collections Archivist II', type:'role'} },
+                { data: { id: 'senior-level role', type:'category'} },
+                { data: { id: 'entry-level role', type:'category'} },
+                { data: { id: 'temporary role', type:'category'} },
+                { data: { id: 'permanent role', type:'category'} },
+                { data: { id: 'rare books', type:'collection'} },
+                { data: { id: 'archives', type:'collection'} },
+                { data: { id: 'digital collections', type:'collection'} },
+                { data: { id: 'University Archives', type:'collection'} },
+                { data: { id: 'University Records Management', type:'collection'} },
+                { data: { id: 'Latin American collections', type:'collection'} },
+                { data: { id: 'library administration', type:'activity'} },
+                { data: { id: 'archival stewardship', type:'activity'} },
+                { data: { id: 'grant development', type:'activity'} },
+                { data: { id: 'exhibitions', type:'activity'} },
+                { data: { id: 'programming', type:'activity'} },
+                { data: { id: 'technology management', type:'activity'} },
+                { data: { id: 'Los Angeles Public Library', type:'institution'} },
+                { data: { id: 'East Carolina University', type:'institution'} },
+                { data: { id: 'Getty Research Institute', type:'institution'} },
+                { data: { id: 'Library Director', type:'institution'} },
+                { data: { id: 'Senior Management Team', type:'institution'} },
+                { data: { id: 'Archivist III', type:'institution'} }
+            ],
+            edges: [
+                { data: { source:'Principal Librarian', target:'senior-level role', label:'is a'} },
+                { data: { source:'Assistant University Librarian', target:'senior-level role', label:'is a'} },
+                { data: { source:'Assistant University Librarian', target:'permanent role', label:'is a'} },
+                { data: { source:'Special Collections Archivist II', target:'temporary role', label:'is a'} },
+                { data: { source:'Special Collections Archivist II', target:'entry-level role', label:'is a'} },
+                { data: { source:'Principal Librarian', target:'rare books', label:'oversees'} },
+                { data: { source:'Principal Librarian', target:'archives', label:'oversees'} },
+                { data: { source:'Principal Librarian', target:'digital collections', label:'oversees'} },
+                { data: { source:'Assistant University Librarian', target:'rare books', label:'oversees'} },
+                { data: { source:'Assistant University Librarian', target:'archives', label:'oversees'} },
+                { data: { source:'Assistant University Librarian', target:'digital collections', label:'oversees'} },
+                { data: { source:'Assistant University Librarian', target:'University Archives', label:'oversees'} },
+                { data: { source:'Assistant University Librarian', target:'University Records Management', label:'oversees'} },
+                { data: { source:'Principal Librarian', target:'library administration', label:'involves'} },
+                { data: { source:'Principal Librarian', target:'archival stewardship', label:'involves'} },
+                { data: { source:'Principal Librarian', target:'grant development', label:'involves'} },
+                { data: { source:'Principal Librarian', target:'exhibitions', label:'involves'} },
+                { data: { source:'Principal Librarian', target:'programming', label:'involves'} },
+                { data: { source:'Principal Librarian', target:'technology management', label:'involves'} },
+                { data: { source:'Assistant University Librarian', target:'library administration', label:'involves'} },
+                { data: { source:'Assistant University Librarian', target:'archival stewardship', label:'involves'} },
+                { data: { source:'Assistant University Librarian', target:'grant development', label:'involves'} },
+                { data: { source:'Assistant University Librarian', target:'exhibitions', label:'involves'} },
+                { data: { source:'Assistant University Librarian', target:'programming', label:'involves'} },
+                { data: { source:'Assistant University Librarian', target:'technology management', label:'involves'} },
+                { data: { source:'Principal Librarian', target:'Library Director', label:'reports to'} },
+                { data: { source:'Assistant University Librarian', target:'Senior Management Team', label:'reports to'} },
+                { data: { source:'Los Angeles Public Library', target:'Principal Librarian', label:'employs'} },
+                { data: { source:'East Carolina University', target:'Assistant University Librarian', label:'employs'} },
+                { data: { source:'Los Angeles Public Library', target:'rare books', label:'houses'} },
+                { data: { source:'Los Angeles Public Library', target:'archives', label:'houses'} },
+                { data: { source:'Los Angeles Public Library', target:'digital collections', label:'houses'} },
+                { data: { source:'East Carolina University', target:'University Archives', label:'houses'} },
+                { data: { source:'East Carolina University', target:'archives', label:'houses'} },
+                { data: { source:'East Carolina University', target:'digital collections', label:'houses'} },
+                { data: { source:'Getty Research Institute', target:'Latin American collections', label:'houses'} },
+                { data: { source:'Getty Research Institute', target:'Special Collections Archivist II', label:'employs'} },
+                { data: { source:'Special Collections Archivist II', target:'Archivist III', label:'reports to'} }
+            ]
+        },
+        style: [
+            { selector:'node', style:{ 'label':'data(id)','font-family':'Atkinson Hyperlegible','font-size':'12px','text-wrap':'wrap','text-max-width':'90px','text-valign':'center','text-halign':'center','width':70,'height':70 } },
+            { selector:'node[type="role"]', style:{'background-color':'#1F6DB1','color':'white'} },
+            { selector:'node[type="collection"]', style:{'background-color':'#F7DA00','color':'black'} },
+            { selector:'node[type="activity"]', style:{'background-color':'#4B2E83','color':'white'} },
+            { selector:'node[type="institution"]', style:{'background-color':'#4B2E83','color':'white'} },
+            { selector:'node[type="category"]', style:{'background-color':'#888','color':'white'} },
+            { selector:'edge', style:{ 'curve-style':'bezier', 'target-arrow-shape':'triangle', 'line-color':'red', 'target-arrow-color':'red', 'label':'data(label)','font-family':'Atkinson Hyperlegible','font-size':'10px','color':'red','text-background-opacity':0,'text-margin-y':-8} }
+        ],
+        layout:{ name:'cose-bilkent', padding:120, nodeRepulsion:8000, idealEdgeLength:120 }
+    });
+
+    // enlarge main node
+    cy.getElementById('Principal Librarian').style({width:140,height:140,'font-size':'16px'});
+
+    // click node to expand
+    cy.on('tap','node', function(evt){
+        const node = evt.target;
+        cy.nodes().forEach(n => n.animate({ style:{width:70,height:70,'font-size':'12px'}},{duration:200}));
+        node.animate({ style:{width:140,height:140,'font-size':'16px'}},{duration:200});
+    });
+});
 </script>
-<script>
 
-const cy = cytoscape({
-
-container: document.getElementById('role-graph'),
-
-zoomingEnabled: false,
-userZoomingEnabled: false,
-panningEnabled: false,
-userPanningEnabled: false,
-boxSelectionEnabled: false,
-
-elements: {
-
-nodes: [
-
-/* ROLES */
-
-{ data: { id: 'Principal Librarian', type:'role'} },
-{ data: { id: 'Assistant University Librarian', type:'role'} },
-{ data: { id: 'Special Collections Archivist II', type:'role'} },
-
-/* ROLE TYPES */
-
-{ data: { id: 'senior-level role', type:'category'} },
-{ data: { id: 'entry-level role', type:'category'} },
-{ data: { id: 'temporary role', type:'category'} },
-{ data: { id: 'permanent role', type:'category'} },
-
-/* COLLECTIONS */
-
-{ data: { id: 'rare books', type:'collection'} },
-{ data: { id: 'archives', type:'collection'} },
-{ data: { id: 'digital collections', type:'collection'} },
-{ data: { id: 'University Archives', type:'collection'} },
-{ data: { id: 'University Records Management', type:'collection'} },
-{ data: { id: 'Latin American collections', type:'collection'} },
-
-/* ACTIVITIES */
-
-{ data: { id: 'library administration', type:'activity'} },
-{ data: { id: 'archival stewardship', type:'activity'} },
-{ data: { id: 'grant development', type:'activity'} },
-{ data: { id: 'exhibitions', type:'activity'} },
-{ data: { id: 'programming', type:'activity'} },
-{ data: { id: 'technology management', type:'activity'} },
-
-/* INSTITUTIONS */
-
-{ data: { id: 'Los Angeles Public Library', type:'institution'} },
-{ data: { id: 'East Carolina University', type:'institution'} },
-{ data: { id: 'Getty Research Institute', type:'institution'} },
-
-/* REPORTING */
-
-{ data: { id: 'Library Director', type:'institution'} },
-{ data: { id: 'Senior Management Team', type:'institution'} },
-{ data: { id: 'Archivist III', type:'institution'} },
-
-],
-
-edges: [
-
-/* ROLE TYPE */
-
-{ data: { source:'Principal Librarian', target:'senior-level role', label:'is a'} },
-{ data: { source:'Assistant University Librarian', target:'senior-level role', label:'is a'} },
-{ data: { source:'Assistant University Librarian', target:'permanent role', label:'is a'} },
-{ data: { source:'Special Collections Archivist II', target:'temporary role', label:'is a'} },
-{ data: { source:'Special Collections Archivist II', target:'entry-level role', label:'is a'} },
-
-/* COLLECTION OVERSIGHT */
-
-{ data: { source:'Principal Librarian', target:'rare books', label:'oversees'} },
-{ data: { source:'Principal Librarian', target:'archives', label:'oversees'} },
-{ data: { source:'Principal Librarian', target:'digital collections', label:'oversees'} },
-
-{ data: { source:'Assistant University Librarian', target:'rare books', label:'oversees'} },
-{ data: { source:'Assistant University Librarian', target:'archives', label:'oversees'} },
-{ data: { source:'Assistant University Librarian', target:'digital collections', label:'oversees'} },
-{ data: { source:'Assistant University Librarian', target:'University Archives', label:'oversees'} },
-{ data: { source:'Assistant University Librarian', target:'University Records Management', label:'oversees'} },
-
-/* ROLE ACTIVITIES */
-
-{ data: { source:'Principal Librarian', target:'library administration', label:'involves'} },
-{ data: { source:'Principal Librarian', target:'archival stewardship', label:'involves'} },
-{ data: { source:'Principal Librarian', target:'grant development', label:'involves'} },
-{ data: { source:'Principal Librarian', target:'exhibitions', label:'involves'} },
-{ data: { source:'Principal Librarian', target:'programming', label:'involves'} },
-{ data: { source:'Principal Librarian', target:'technology management', label:'involves'} },
-
-{ data: { source:'Assistant University Librarian', target:'library administration', label:'involves'} },
-{ data: { source:'Assistant University Librarian', target:'archival stewardship', label:'involves'} },
-{ data: { source:'Assistant University Librarian', target:'grant development', label:'involves'} },
-{ data: { source:'Assistant University Librarian', target:'exhibitions', label:'involves'} },
-{ data: { source:'Assistant University Librarian', target:'programming', label:'involves'} },
-{ data: { source:'Assistant University Librarian', target:'technology management', label:'involves'} },
-
-/* REPORTING */
-
-{ data: { source:'Principal Librarian', target:'Library Director', label:'reports to'} },
-{ data: { source:'Assistant University Librarian', target:'Senior Management Team', label:'reports to'} },
-
-/* EMPLOYMENT */
-
-{ data: { source:'Los Angeles Public Library', target:'Principal Librarian', label:'employs'} },
-{ data: { source:'East Carolina University', target:'Assistant University Librarian', label:'employs'} },
-
-/* COLLECTION LOCATION */
-
-{ data: { source:'Los Angeles Public Library', target:'rare books', label:'houses'} },
-{ data: { source:'Los Angeles Public Library', target:'archives', label:'houses'} },
-{ data: { source:'Los Angeles Public Library', target:'digital collections', label:'houses'} },
-
-{ data: { source:'East Carolina University', target:'University Archives', label:'houses'} },
-{ data: { source:'East Carolina University', target:'archives', label:'houses'} },
-{ data: { source:'East Carolina University', target:'digital collections', label:'houses'} },
-
-/* GETTY RELATIONSHIPS */
-
-{ data: { source:'Getty Research Institute', target:'Latin American collections', label:'houses'} },
-{ data: { source:'Getty Research Institute', target:'Special Collections Archivist II', label:'employs'} },
-
-/* REPORTING STRUCTURE */
-
-{ data: { source:'Special Collections Archivist II', target:'Archivist III', label:'reports to'} }
-
-]
-},
-
-style: [
-
-/* GENERAL NODE STYLE */
-
-{
-selector:'node',
-style:{
-'label':'data(id)',
-'font-family':'Atkinson Hyperlegible',
-'font-size':'12px',
-'text-wrap':'wrap',
-'text-max-width':'90px',
-'text-valign':'center',
-'text-halign':'center',
-'width':70,
-'height':70
-}
-},
-
-/* ROLE NODE (BLUE) */
-
-{
-selector:'node[type="role"]',
-style:{
-'background-color':'#1F6DB1',
-'color':'white'
-}
-},
-
-/* COLLECTIONS (YELLOW) */
-
-{
-selector:'node[type="collection"]',
-style:{
-'background-color':'#F7DA00',
-'color':'black'
-}
-},
-
-/* ACTIVITIES (PURPLE) */
-
-{
-selector:'node[type="activity"]',
-style:{
-'background-color':'#4B2E83',
-'color':'white'
-}
-},
-
-/* INSTITUTIONS (PURPLE ALSO) */
-
-{
-selector:'node[type="institution"]',
-style:{
-'background-color':'#4B2E83',
-'color':'white'
-}
-},
-
-{
-selector:'node[type="category"]',
-style:{
-'background-color':'#888',
-'color':'white'
-}
-},
-
-/* EDGE STYLE */
-
-{
-selector:'edge',
-style:{
-'curve-style':'bezier',
-'target-arrow-shape':'triangle',
-'line-color':'red',
-'target-arrow-color':'red',
-'label':'data(label)',
-'font-family':'Atkinson Hyperlegible',
-'font-size':'10px',
-'color':'red',
-'text-background-opacity':0,
-'text-margin-y':-8
-}
-}
-
-],
-
-layout:{
-name:'cose-bilkent',
-padding:120,
-nodeRepulsion:8000,
-idealEdgeLength:120
-}
-
-});
-
-
-/* START WITH MAIN NODE LARGER */
-
-const mainNode = cy.getElementById('Principal Librarian');
-
-mainNode.style({
-width:140,
-height:140,
-'font-size':'16px'
-});
-
-
-/* CLICK NODE TO EXPAND */
-
-cy.on('tap','node', function(evt){
-
-let node = evt.target;
-
-cy.nodes().forEach(n => {
-
-n.animate({
-style:{
-width:70,
-height:70,
-'font-size':'12px'
-}
-}, {duration:200});
-
-});
-
-node.animate({
-style:{
-width:140,
-height:140,
-'font-size':'16px'
-}
-}, {duration:200});
-
-});
-
-
-</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
