@@ -210,7 +210,8 @@ edges: [
   fit: true
 }
 });
-
+cy.on('layoutstop', () => cy.fit(undefined, 40));
+    
 const mainNode = cy.getElementById('Principal Librarian');
 mainNode.style({ width:140, height:140, 'font-size':'16px' });
 
@@ -225,6 +226,7 @@ cy.on('tap','node', function(evt){
 
 </body>
 </html>
+
 
 
 
