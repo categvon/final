@@ -1,25 +1,18 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Specialization Dossier — Group 15</title>
 
+<!-- Atkinson Hyperlegible: Regular + Bold -->
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
 
-<!-- Cytoscape graph library -->
-<script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+<link rel="stylesheet" href="style.css">
 
 <style>
 body {
     background: url("images/background1.png") center center / cover no-repeat fixed;
-}
-
-/* Knowledge graph container */
-#cy{
-    width:100%;
-    height:520px;
 }
 </style>
 </head>
@@ -61,15 +54,13 @@ body {
         </div>
 
         <div class="abstract-text">
-
-            <!-- KNOWLEDGE GRAPH -->
-            <div id="cy"></div>
-
+            <p>This is a place holder for the abstract that we will write. This is a place holder for the abstract that we will write. This is a place holder for the abstract that we will write.</p>
+            <p>This is a place holder for the abstract that we will write. This is a place holder for the abstract that we will write. This is a place holder for the abstract that we will write.</p>
+            <p>This is a place holder for the abstract that we will write. This is a place holder for the abstract that we will write. This is a place holder for the abstract that we will write.</p>
         </div>
 
     </div>
 </div>
-
 <!-- background artwork preview -->
 <div class="bg-preview" onclick="openSpotlight()">
     <img src="images/background1.png" alt="Background artwork preview">
@@ -84,15 +75,13 @@ body {
         Exhibition flyer for the Brockman Gallery.<br><br>
         Knopka, R. (n.d.). <em>Outsiders Welcome: Brockman Gallery</em>.  
         LAAC Collective.<br>
-        <a href="https://www.laacollective.org/work/outsiders-welcome-brockman-gallery" target="_blank">
+         <a href="https://www.laacollective.org/work/outsiders-welcome-brockman-gallery" target="_blank">
         https://www.laacollective.org/work/outsiders-welcome-brockman-gallery
         </a>
     </div>
 </div>
 
 <script>
-
-/* spotlight image */
 
 function openSpotlight(){
     const s = document.getElementById("spotlight");
@@ -108,91 +97,10 @@ function closeSpotlight(e){
     }
 }
 
-
-/* LOAD KNOWLEDGE GRAPH */
-
-fetch("graph.json")
-.then(response => response.json())
-.then(data => {
-
-var cy = cytoscape({
-
-container: document.getElementById("cy"),
-
-elements: [
-  ...data.nodes,
-  ...data.edges
-],
-
-layout: {
-  name: "cose",
-  animate: true,
-  padding: 20
-},
-
-style: [
-
-{
-selector: "node",
-style: {
-    "label": "data(id)",
-    "background-color": "#4f8cff",
-    "color": "white",
-    "text-valign": "center",
-    "text-halign": "center",
-    "font-size": "10px",
-    "width": 35,
-    "height": 35
-}
-},
-
-{
-selector: "edge",
-style: {
-    "curve-style": "bezier",
-    "line-color": "#ccc",
-    "target-arrow-color": "#ccc",
-    "target-arrow-shape": "triangle",
-    "width": 1
-}
-},
-
-{
-selector: ".expanded",
-style: {
-    "width": 80,
-    "height": 80,
-    "font-size": "16px",
-    "background-color": "#ff7f50"
-}
-}
-
-]
-
-});
-
-
-/* CLICK NODE TO EXPAND */
-
-cy.on("tap","node", function(evt){
-
-let node = evt.target
-
-if(node.hasClass("expanded")){
-    node.removeClass("expanded")
-}
-else{
-    node.addClass("expanded")
-}
-
-})
-
-})
-
 </script>
-
 </body>
 </html>
+
 
 
 
