@@ -422,7 +422,7 @@ body {
 }
 
 .return-top img{
-    width: 70px;
+    width: 120px;
     height: auto;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -435,4 +435,5 @@ body {
 html{
     scroll-behavior: smooth;
 }
+
 
