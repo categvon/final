@@ -164,17 +164,9 @@ const cy = cytoscape({
       { data: { id: 'University Archives', type: 'collection' } },
       { data: { id: 'University Records Management', type: 'collection' } },
       { data: { id: 'Latin American collections', type: 'collection' } },
-      { data: { id: 'library administration', type: 'activity' } },
-      { data: { id: 'archival stewardship', type: 'activity' } },
-      { data: { id: 'grant development', type: 'activity' } },
-      { data: { id: 'exhibitions', type: 'activity' } },
-      { data: { id: 'technology management', type: 'activity' } },
       { data: { id: 'Los Angeles Public Library', type: 'institution' } },
       { data: { id: 'East Carolina University', type: 'institution' } },
-      { data: { id: 'Getty Research Institute', type: 'institution' } },
-      { data: { id: 'Library Director', type: 'institution' } },
-      { data: { id: 'Senior Management Team', type: 'institution' } },
-      { data: { id: 'Archivist III', type: 'institution' } }
+      { data: { id: 'Getty Research Institute', type: 'institution' } }
     ],
     edges: [
       { data: { source: 'Principal Librarian', target: 'senior-level role', label: 'is a' } },
@@ -190,16 +182,6 @@ const cy = cytoscape({
       { data: { source: 'Assistant University Librarian', target: 'digital collections', label: 'oversees' } },
       { data: { source: 'Assistant University Librarian', target: 'University Archives', label: 'oversees' } },
       { data: { source: 'Assistant University Librarian', target: 'University Records Management', label: 'oversees' } },
-      { data: { source: 'Principal Librarian', target: 'library administration', label: 'involves' } },
-      { data: { source: 'Principal Librarian', target: 'archival stewardship', label: 'involves' } },
-      { data: { source: 'Principal Librarian', target: 'grant development', label: 'involves' } },
-      { data: { source: 'Principal Librarian', target: 'exhibitions', label: 'involves' } },
-      { data: { source: 'Principal Librarian', target: 'technology management', label: 'involves' } },
-      { data: { source: 'Assistant University Librarian', target: 'library administration', label: 'involves' } },
-      { data: { source: 'Assistant University Librarian', target: 'archival stewardship', label: 'involves' } },
-      { data: { source: 'Assistant University Librarian', target: 'grant development', label: 'involves' } },
-      { data: { source: 'Assistant University Librarian', target: 'exhibitions', label: 'involves' } },
-      { data: { source: 'Assistant University Librarian', target: 'technology management', label: 'involves' } },
       { data: { source: 'Principal Librarian', target: 'Library Director', label: 'is permanent' } },
       { data: { source: 'Special Collections Archivist I', target: 'archives', label: 'maintains' } },
       { data: { source: 'Special Collections Archivist I', target: 'digital collections', label: 'maintains' } },
@@ -240,6 +222,7 @@ cy.on('tap','node', function(evt){
 
 </body>
 </html>
+
 
 
 
