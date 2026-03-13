@@ -170,28 +170,38 @@ const cy = cytoscape({
 ],
 edges: [
   { data: { source: 'Principal Librarian', target: 'senior-level role', label: 'is a' } },
+  { data: { source: 'Principal Librarian', target: 'permanent role', label: 'is a' } },  // ⭐ NEW EDGE
+
   { data: { source: 'Assistant University Librarian', target: 'senior-level role', label: 'is a' } },
   { data: { source: 'Assistant University Librarian', target: 'permanent role', label: 'is a' } },
+
   { data: { source: 'Special Collections Archivist I', target: 'temporary role', label: 'is a' } },
   { data: { source: 'Special Collections Archivist I', target: 'entry-level role', label: 'is a' } },
+
   { data: { source: 'Principal Librarian', target: 'rare books', label: 'oversees' } },
   { data: { source: 'Principal Librarian', target: 'archives', label: 'oversees' } },
   { data: { source: 'Principal Librarian', target: 'digital collections', label: 'oversees' } },
+
   { data: { source: 'Assistant University Librarian', target: 'rare books', label: 'oversees' } },
   { data: { source: 'Assistant University Librarian', target: 'archives', label: 'oversees' } },
   { data: { source: 'Assistant University Librarian', target: 'digital collections', label: 'oversees' } },
   { data: { source: 'Assistant University Librarian', target: 'University Archives', label: 'oversees' } },
   { data: { source: 'Assistant University Librarian', target: 'University Records Management', label: 'oversees' } },
+
   { data: { source: 'Special Collections Archivist I', target: 'archives', label: 'maintains' } },
   { data: { source: 'Special Collections Archivist I', target: 'digital collections', label: 'maintains' } },
+
   { data: { source: 'Los Angeles Public Library', target: 'Principal Librarian', label: 'employs' } },
   { data: { source: 'East Carolina University', target: 'Assistant University Librarian', label: 'employs' } },
+
   { data: { source: 'Los Angeles Public Library', target: 'rare books', label: 'houses' } },
   { data: { source: 'Los Angeles Public Library', target: 'archives', label: 'houses' } },
   { data: { source: 'Los Angeles Public Library', target: 'digital collections', label: 'houses' } },
+
   { data: { source: 'East Carolina University', target: 'University Archives', label: 'houses' } },
   { data: { source: 'East Carolina University', target: 'archives', label: 'houses' } },
   { data: { source: 'East Carolina University', target: 'digital collections', label: 'houses' } },
+
   { data: { source: 'Getty Research Institute', target: 'Latin American collections', label: 'houses' } },
   { data: { source: 'Getty Research Institute', target: 'Special Collections Archivist I', label: 'employs' } }
 ]
@@ -226,6 +236,7 @@ cy.on('tap','node', function(evt){
 
 </body>
 </html>
+
 
 
 
