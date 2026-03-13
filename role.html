@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script src="https://unpkg.com/cytoscape@3.26.0/dist/cytoscape.min.js"></script>
-<script src="https://unpkg.com/cytoscape-cose-bilkent@4.1.0/cytoscape-cose-bilkent.min.js"></script>
     
 <style>
 body {
@@ -228,15 +227,14 @@ const cy = cytoscape({
     { selector:'edge', style:{'curve-style':'bezier','target-arrow-shape':'triangle','line-color':'red','target-arrow-color':'red','label':'data(label)','font-family':'Atkinson Hyperlegible','font-size':'10px','color':'red','text-background-opacity':0,'text-margin-y':-8} }
   ],
 layout: {
-  name: 'cose-bilkent',
-  nodeRepulsion: 5000,        // how much nodes push away from each other
-  idealEdgeLength: 200,       // edge length → more spacing between nodes
-  edgeElasticity: 0.8,
-  nestingFactor: 0.7,
-  gravity: 0.1,
-  numIter: 1000,              // higher → layout stabilizes better
-  tile: true,                 // keeps nodes from overlapping
-  animate: true,
+  name: 'cose',
+  padding: 200,                 // more room around the graph
+  idealEdgeLength: 140,         // longer edges → nodes spread apart
+  nodeRepulsion: 12000,         // nodes push each other further
+  edgeElasticity: 0.9,          // slightly stiffer edges
+  gravity: 0.1,                 // keeps graph from drifting too far
+  nestingFactor: 0.7,           // reduces overlap
+  animate: true,                // smooth animation
   animationDuration: 1000
 }
 });
@@ -255,6 +253,7 @@ cy.on('tap','node', function(evt){
 
 </body>
 </html>
+
 
 
 
