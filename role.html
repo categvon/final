@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script src="https://unpkg.com/cytoscape@3.26.0/dist/cytoscape.min.js"></script>
-    
+
 <style>
 body {
     background: url("images/background2.png") center center / cover no-repeat fixed;
@@ -27,6 +27,18 @@ body {
 
 .abstract-text a:hover {
     opacity: 0.7;
+}
+
+/* GRAPH CONTAINER */
+.graph-box {
+    display: block;
+    padding: 30px;
+    margin-bottom: 64px;
+}
+
+#role-graph {
+    width: 100%;
+    height: 1400px; /* taller to spread nodes vertically */
 }
 </style>
 </head>
@@ -151,71 +163,68 @@ const cy = cytoscape({
   boxSelectionEnabled: false,
   elements: {
     nodes: [
-      { data: { id: 'Principal Librarian', type:'role'} },
-      { data: { id: 'Assistant University Librarian', type:'role'} },
-      { data: { id: 'Special Collections Archivist I', type:'role'} },
-      { data: { id: 'senior-level role', type:'category'} },
-      { data: { id: 'entry-level role', type:'category'} },
-      { data: { id: 'temporary role', type:'category'} },
-      { data: { id: 'permanent role', type:'category'} },
-      { data: { id: 'rare books', type:'collection'} },
-      { data: { id: 'archives', type:'collection'} },
-      { data: { id: 'digital collections', type:'collection'} },
-      { data: { id: 'University Archives', type:'collection'} },
-      { data: { id: 'University Records Management', type:'collection'} },
-      { data: { id: 'Latin American collections', type:'collection'} },
-      { data: { id: 'library administration', type:'activity'} },
-      { data: { id: 'archival stewardship', type:'activity'} },
-      { data: { id: 'grant development', type:'activity'} },
-      { data: { id: 'exhibitions', type:'activity'} },
-      { data: { id: 'programming', type:'activity'} },
-      { data: { id: 'technology management', type:'activity'} },
-      { data: { id: 'Los Angeles Public Library', type:'institution'} },
-      { data: { id: 'East Carolina University', type:'institution'} },
-      { data: { id: 'Getty Research Institute', type:'institution'} },
-      { data: { id: 'Library Director', type:'institution'} },
-      { data: { id: 'Senior Management Team', type:'institution'} },
-      { data: { id: 'Archivist III', type:'institution'} }
+      { data: { id: 'Principal Librarian', type: 'role' } },
+      { data: { id: 'Assistant University Librarian', type: 'role' } },
+      { data: { id: 'Special Collections Archivist I', type: 'role' } },
+      { data: { id: 'senior-level role', type: 'category' } },
+      { data: { id: 'entry-level role', type: 'category' } },
+      { data: { id: 'temporary role', type: 'category' } },
+      { data: { id: 'permanent role', type: 'category' } },
+      { data: { id: 'rare books', type: 'collection' } },
+      { data: { id: 'archives', type: 'collection' } },
+      { data: { id: 'digital collections', type: 'collection' } },
+      { data: { id: 'University Archives', type: 'collection' } },
+      { data: { id: 'University Records Management', type: 'collection' } },
+      { data: { id: 'Latin American collections', type: 'collection' } },
+      { data: { id: 'library administration', type: 'activity' } },
+      { data: { id: 'archival stewardship', type: 'activity' } },
+      { data: { id: 'grant development', type: 'activity' } },
+      { data: { id: 'exhibitions', type: 'activity' } },
+      { data: { id: 'technology management', type: 'activity' } },
+      { data: { id: 'Los Angeles Public Library', type: 'institution' } },
+      { data: { id: 'East Carolina University', type: 'institution' } },
+      { data: { id: 'Getty Research Institute', type: 'institution' } },
+      { data: { id: 'Library Director', type: 'institution' } },
+      { data: { id: 'Senior Management Team', type: 'institution' } },
+      { data: { id: 'Archivist III', type: 'institution' } }
     ],
     edges: [
-      { data: { source:'Principal Librarian', target:'senior-level role', label:'is a'} },
-      { data: { source:'Assistant University Librarian', target:'senior-level role', label:'is a'} },
-      { data: { source:'Assistant University Librarian', target:'permanent role', label:'is a'} },
-      { data: { source:'Special Collections Archivist I', target:'temporary role', label:'is a'} },
-      { data: { source:'Special Collections Archivist I', target:'entry-level role', label:'is a'} },
-      { data: { source:'Principal Librarian', target:'rare books', label:'oversees'} },
-      { data: { source:'Principal Librarian', target:'archives', label:'oversees'} },
-      { data: { source:'Principal Librarian', target:'digital collections', label:'oversees'} },
-      { data: { source:'Assistant University Librarian', target:'rare books', label:'oversees'} },
-      { data: { source:'Assistant University Librarian', target:'archives', label:'oversees'} },
-      { data: { source:'Assistant University Librarian', target:'digital collections', label:'oversees'} },
-      { data: { source:'Assistant University Librarian', target:'University Archives', label:'oversees'} },
-      { data: { source:'Assistant University Librarian', target:'University Records Management', label:'oversees'} },
-      { data: { source:'Principal Librarian', target:'library administration', label:'involves'} },
-      { data: { source:'Principal Librarian', target:'archival stewardship', label:'involves'} },
-      { data: { source:'Principal Librarian', target:'grant development', label:'involves'} },
-      { data: { source:'Principal Librarian', target:'exhibitions', label:'involves'} },
-      { data: { source:'Principal Librarian', target:'programming', label:'involves'} },
-      { data: { source:'Principal Librarian', target:'technology management', label:'involves'} },
-      { data: { source:'Assistant University Librarian', target:'library administration', label:'involves'} },
-      { data: { source:'Assistant University Librarian', target:'archival stewardship', label:'involves'} },
-      { data: { source:'Assistant University Librarian', target:'grant development', label:'involves'} },
-      { data: { source:'Assistant University Librarian', target:'exhibitions', label:'involves'} },
-      { data: { source:'Assistant University Librarian', target:'programming', label:'involves'} },
-      { data: { source:'Assistant University Librarian', target:'technology management', label:'involves'} },
-      { data: { source:'Principal Librarian', target:'Library Director', label:'reports to'} },
-      { data: { source:'Assistant University Librarian', target:'Senior Management Team', label:'reports to'} },
-      { data: { source:'Los Angeles Public Library', target:'Principal Librarian', label:'employs'} },
-      { data: { source:'East Carolina University', target:'Assistant University Librarian', label:'employs'} },
-      { data: { source:'Los Angeles Public Library', target:'rare books', label:'houses'} },
-      { data: { source:'Los Angeles Public Library', target:'archives', label:'houses'} },
-      { data: { source:'Los Angeles Public Library', target:'digital collections', label:'houses'} },
-      { data: { source:'East Carolina University', target:'University Archives', label:'houses'} },
-      { data: { source:'East Carolina University', target:'archives', label:'houses'} },
-      { data: { source:'East Carolina University', target:'digital collections', label:'houses'} },
-      { data: { source:'Getty Research Institute', target:'Latin American collections', label:'houses'} },
-      { data: { source:'Getty Research Institute', target:'Special Collections Archivist I', label:'employs'} },
-      { data: { source:'Special Collections Archivist I', target:'Archivist III', label:'reports to'} }
+      { data: { source: 'Principal Librarian', target: 'senior-level role', label: 'is a' } },
+      { data: { source: 'Assistant University Librarian', target: 'senior-level role', label: 'is a' } },
+      { data: { source: 'Assistant University Librarian', target: 'permanent role', label: 'is a' } },
+      { data: { source: 'Special Collections Archivist I', target: 'temporary role', label: 'is a' } },
+      { data: { source: 'Special Collections Archivist I', target: 'entry-level role', label: 'is a' } },
+      { data: { source: 'Principal Librarian', target: 'rare books', label: 'oversees' } },
+      { data: { source: 'Principal Librarian', target: 'archives', label: 'oversees' } },
+      { data: { source: 'Principal Librarian', target: 'digital collections', label: 'oversees' } },
+      { data: { source: 'Assistant University Librarian', target: 'rare books', label: 'oversees' } },
+      { data: { source: 'Assistant University Librarian', target: 'archives', label: 'oversees' } },
+      { data: { source: 'Assistant University Librarian', target: 'digital collections', label: 'oversees' } },
+      { data: { source: 'Assistant University Librarian', target: 'University Archives', label: 'oversees' } },
+      { data: { source: 'Assistant University Librarian', target: 'University Records Management', label: 'oversees' } },
+      { data: { source: 'Principal Librarian', target: 'library administration', label: 'involves' } },
+      { data: { source: 'Principal Librarian', target: 'archival stewardship', label: 'involves' } },
+      { data: { source: 'Principal Librarian', target: 'grant development', label: 'involves' } },
+      { data: { source: 'Principal Librarian', target: 'exhibitions', label: 'involves' } },
+      { data: { source: 'Principal Librarian', target: 'technology management', label: 'involves' } },
+      { data: { source: 'Assistant University Librarian', target: 'library administration', label: 'involves' } },
+      { data: { source: 'Assistant University Librarian', target: 'archival stewardship', label: 'involves' } },
+      { data: { source: 'Assistant University Librarian', target: 'grant development', label: 'involves' } },
+      { data: { source: 'Assistant University Librarian', target: 'exhibitions', label: 'involves' } },
+      { data: { source: 'Assistant University Librarian', target: 'technology management', label: 'involves' } },
+      { data: { source: 'Principal Librarian', target: 'Library Director', label: 'is permanent' } },
+      { data: { source: 'Special Collections Archivist I', target: 'archives', label: 'maintains' } },
+      { data: { source: 'Special Collections Archivist I', target: 'digital collections', label: 'maintains' } },
+      { data: { source: 'Los Angeles Public Library', target: 'Principal Librarian', label: 'employs' } },
+      { data: { source: 'East Carolina University', target: 'Assistant University Librarian', label: 'employs' } },
+      { data: { source: 'Los Angeles Public Library', target: 'rare books', label: 'houses' } },
+      { data: { source: 'Los Angeles Public Library', target: 'archives', label: 'houses' } },
+      { data: { source: 'Los Angeles Public Library', target: 'digital collections', label: 'houses' } },
+      { data: { source: 'East Carolina University', target: 'University Archives', label: 'houses' } },
+      { data: { source: 'East Carolina University', target: 'archives', label: 'houses' } },
+      { data: { source: 'East Carolina University', target: 'digital collections', label: 'houses' } },
+      { data: { source: 'Getty Research Institute', target: 'Latin American collections', label: 'houses' } },
+      { data: { source: 'Getty Research Institute', target: 'Special Collections Archivist I', label: 'employs' } }
     ]
   },
   style: [
@@ -226,7 +235,17 @@ const cy = cytoscape({
     { selector:'node[type="institution"]', style:{'background-color':'#4B2E83','color':'white'} },
     { selector:'edge', style:{'curve-style':'bezier','target-arrow-shape':'triangle','line-color':'red','target-arrow-color':'red','label':'data(label)','font-family':'Atkinson Hyperlegible','font-size':'10px','color':'red','text-background-opacity':0,'text-margin-y':-8} }
   ],
-], layout:{ name:'cose', padding:120 }
+  layout: {
+    name: 'cose',
+    padding: 200,
+    idealEdgeLength: 200,
+    nodeRepulsion: 20000,
+    edgeElasticity: 0.9,
+    gravity: 0.1,
+    nestingFactor: 0.7,
+    animate: true,
+    animationDuration: 1000
+  }
 });
 
 const mainNode = cy.getElementById('Principal Librarian');
@@ -243,6 +262,7 @@ cy.on('tap','node', function(evt){
 
 </body>
 </html>
+
 
 
 
