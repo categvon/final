@@ -160,39 +160,117 @@ elements: {
 
 nodes: [
 
+/* ROLES */
+
 { data: { id: 'Principal Librarian', type:'role'} },
+{ data: { id: 'Assistant University Librarian', type:'role'} },
+{ data: { id: 'Special Collections Archivist II', type:'role'} },
+
+/* ROLE TYPES */
+
+{ data: { id: 'senior-level role', type:'category'} },
+{ data: { id: 'entry-level role', type:'category'} },
+{ data: { id: 'temporary role', type:'category'} },
+{ data: { id: 'permanent role', type:'category'} },
+
+/* COLLECTIONS */
 
 { data: { id: 'rare books', type:'collection'} },
 { data: { id: 'archives', type:'collection'} },
 { data: { id: 'digital collections', type:'collection'} },
+{ data: { id: 'University Archives', type:'collection'} },
+{ data: { id: 'University Records Management', type:'collection'} },
+{ data: { id: 'Latin American collections', type:'collection'} },
+
+/* ACTIVITIES */
 
 { data: { id: 'library administration', type:'activity'} },
 { data: { id: 'archival stewardship', type:'activity'} },
 { data: { id: 'grant development', type:'activity'} },
 { data: { id: 'exhibitions', type:'activity'} },
-{ data: { id: 'technology systems', type:'activity'} },
+{ data: { id: 'programming', type:'activity'} },
+{ data: { id: 'technology management', type:'activity'} },
 
-{ data: { id: 'Getty', type:'institution'} },
-{ data: { id: 'University of Notre Dame', type:'institution'} },
-{ data: { id: 'East Carolina University', type:'institution'} }
+/* INSTITUTIONS */
+
+{ data: { id: 'Los Angeles Public Library', type:'institution'} },
+{ data: { id: 'East Carolina University', type:'institution'} },
+{ data: { id: 'Getty Research Institute', type:'institution'} },
+
+/* REPORTING */
+
+{ data: { id: 'Library Director', type:'institution'} },
+{ data: { id: 'Senior Management Team', type:'institution'} }
+{ data: { id: 'Archivist III', type:'institution'} }
 
 ],
 
 edges: [
 
+/* ROLE TYPE */
+
+{ data: { source:'Principal Librarian', target:'senior-level role', label:'is a'} },
+{ data: { source:'Assistant University Librarian', target:'senior-level role', label:'is a'} },
+{ data: { source:'Assistant University Librarian', target:'permanent role', label:'is a'} },
+{ data: { source:'Special Collections Archivist II', target:'temporary role', label:'is a'} },
+{ data: { source:'Special Collections Archivist II', target:'entry-level role', label:'is a'} },
+
+/* COLLECTION OVERSIGHT */
+
 { data: { source:'Principal Librarian', target:'rare books', label:'oversees'} },
 { data: { source:'Principal Librarian', target:'archives', label:'oversees'} },
 { data: { source:'Principal Librarian', target:'digital collections', label:'oversees'} },
 
-{ data: { source:'Principal Librarian', target:'library administration', label:'manages'} },
-{ data: { source:'Principal Librarian', target:'archival stewardship', label:'manages'} },
-{ data: { source:'Principal Librarian', target:'grant development', label:'develops'} },
-{ data: { source:'Principal Librarian', target:'exhibitions', label:'organizes'} },
-{ data: { source:'Principal Librarian', target:'technology systems', label:'manages'} },
+{ data: { source:'Assistant University Librarian', target:'rare books', label:'oversees'} },
+{ data: { source:'Assistant University Librarian', target:'archives', label:'oversees'} },
+{ data: { source:'Assistant University Librarian', target:'digital collections', label:'oversees'} },
+{ data: { source:'Assistant University Librarian', target:'University Archives', label:'oversees'} },
+{ data: { source:'Assistant University Librarian', target:'University Records Management', label:'oversees'} },
 
-{ data: { source:'Getty', target:'archives', label:'maintains'} },
-{ data: { source:'University of Notre Dame', target:'archives', label:'maintains'} },
-{ data: { source:'East Carolina University', target:'archives', label:'maintains'} }
+/* ROLE ACTIVITIES */
+
+{ data: { source:'Principal Librarian', target:'library administration', label:'involves'} },
+{ data: { source:'Principal Librarian', target:'archival stewardship', label:'involves'} },
+{ data: { source:'Principal Librarian', target:'grant development', label:'involves'} },
+{ data: { source:'Principal Librarian', target:'exhibitions', label:'involves'} },
+{ data: { source:'Principal Librarian', target:'programming', label:'involves'} },
+{ data: { source:'Principal Librarian', target:'technology management', label:'involves'} },
+
+{ data: { source:'Assistant University Librarian', target:'library administration', label:'involves'} },
+{ data: { source:'Assistant University Librarian', target:'archival stewardship', label:'involves'} },
+{ data: { source:'Assistant University Librarian', target:'grant development', label:'involves'} },
+{ data: { source:'Assistant University Librarian', target:'exhibitions', label:'involves'} },
+{ data: { source:'Assistant University Librarian', target:'programming', label:'involves'} },
+{ data: { source:'Assistant University Librarian', target:'technology management', label:'involves'} },
+
+/* REPORTING */
+
+{ data: { source:'Principal Librarian', target:'Library Director', label:'reports to'} },
+{ data: { source:'Assistant University Librarian', target:'Senior Management Team', label:'reports to'} },
+
+/* EMPLOYMENT */
+
+{ data: { source:'Los Angeles Public Library', target:'Principal Librarian', label:'employs'} },
+{ data: { source:'East Carolina University', target:'Assistant University Librarian', label:'employs'} },
+
+/* COLLECTION LOCATION */
+
+{ data: { source:'Los Angeles Public Library', target:'rare books', label:'houses'} },
+{ data: { source:'Los Angeles Public Library', target:'archives', label:'houses'} },
+{ data: { source:'Los Angeles Public Library', target:'digital collections', label:'houses'} },
+
+{ data: { source:'East Carolina University', target:'University Archives', label:'houses'} },
+{ data: { source:'East Carolina University', target:'archives', label:'houses'} },
+{ data: { source:'East Carolina University', target:'digital collections', label:'houses'} }
+
+/* GETTY RELATIONSHIPS */
+
+{ data: { source:'Getty Research Institute', target:'Latin American collections', label:'houses'} },
+{ data: { source:'Getty Research Institute', target:'Special Collections Archivist II', label:'employs'} },
+
+/* REPORTING STRUCTURE */
+
+{ data: { source:'Special Collections Archivist II', target:'Archivist III', label:'reports to'} },
 
 ]
 
@@ -253,6 +331,14 @@ style:{
 selector:'node[type="institution"]',
 style:{
 'background-color':'#4B2E83',
+'color':'white'
+}
+},
+
+{
+selector:'node[type="category"]',
+style:{
+'background-color':'#888',
 'color':'white'
 }
 },
@@ -328,6 +414,7 @@ height:140,
 </script>
 </body>
 </html>
+
 
 
 
