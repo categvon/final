@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script src="https://unpkg.com/cytoscape@3.26.0/dist/cytoscape.min.js"></script>
+<script src="https://unpkg.com/cytoscape-cose-bilkent/cytoscape-cose-bilkent.js"></script>
 
 <style>
 body {
@@ -200,8 +201,8 @@ nodes: [
 /* REPORTING */
 
 { data: { id: 'Library Director', type:'institution'} },
-{ data: { id: 'Senior Management Team', type:'institution'} }
-{ data: { id: 'Archivist III', type:'institution'} }
+{ data: { id: 'Senior Management Team', type:'institution'} },
+{ data: { id: 'Archivist III', type:'institution'} },
 
 ],
 
@@ -363,8 +364,10 @@ style:{
 ],
 
 layout:{
-name:'cose',
-padding:60
+name:'cose-bilkent',
+padding:120,
+nodeRepulsion:8000,
+idealEdgeLength:120
 }
 
 });
@@ -413,6 +416,7 @@ height:140,
 </script>
 </body>
 </html>
+
 
 
 
