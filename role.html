@@ -6,36 +6,62 @@
 <title>Professional Role</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
 <script src="https://unpkg.com/cytoscape@3.26.0/dist/cytoscape.min.js"></script>
 
 <style>
 body {
     background: url("images/background2.png") center center / cover no-repeat fixed;
+    margin: 0;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
-.abstract-text h4 {
+/* ---------- WHITE BOXES ---------- */
+
+.page-wrapper {
+    width: 90%;
+    margin: auto;
+}
+
+.white-box {
+    background: white;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 8px;
+}
+
+/* ---------- GRAPH CONTAINER ---------- */
+
+.graph-box {
+    height: 650px;   /* CRITICAL for Cytoscape */
+}
+
+#role-graph {
+    width: 100%;
+    height: 100%;
+}
+
+/* ---------- MENU ---------- */
+
+.menu a {
+    margin-right: 12px;
+    text-decoration: none;
     font-weight: 700;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+    color: black;
 }
 
-.abstract-text a {
-    text-decoration: underline;
-    color: #000;
-}
-
-.abstract-text a:hover {
+.menu a:hover {
     opacity: 0.7;
 }
 </style>
 </head>
 
 <body>
-<div class="page-wrapper">
-<div class="vertical-line"></div>
 
-<div class="white-box top-box">
+<div class="page-wrapper">
+
+<!-- TOP BOX -->
+
+<div class="white-box">
 <div class="menu">
     <a href="index.html">overview</a>
     <a href="role.html">the role</a>
@@ -49,56 +75,17 @@ body {
     <a href="references.html">references</a>
 </div>
 
-<div class="intro-content">
 <h1>PROFESSIONAL ROLE</h1>
 <h2>Job Description</h2>
-<p>The Principal Librarian, Research & Special Collections role at the Los Angeles Public Library is a senior leadership position that involves overseeing rare books, archives, and digital collections within a public library system. The duties associated with this specialization include library administration, archival stewardship, grant development, exhibitions and programming, and technology and systems management.
+
+<p>
+The Principal Librarian, Research & Special Collections role at the Los Angeles Public Library
+is a senior leadership position that involves overseeing rare books, archives, and digital
+collections within a public library system.
 </p>
 </div>
-</div>
 
-<div class="white-box bottom-box">
-<div class="abstract-title">
-<h3>Job Listings</h3>
-</div>
-
-<div class="abstract-text">
-
-    <h4>Entry-Level Positions</h4>
-    <p>
-        <a href="https://jobs-getty.icims.com/jobs/4749/special-collections-archivist-ii/job" target="_blank">
-            Special Collections Archivist I, Getty
-        </a>
-    </p>
-
-    <h4>Mid-Level Positions</h4>
-    <p>
-        <a href="https://jobs-getty.icims.com/jobs/4749/special-collections-archivist-ii/job" target="_blank">
-            Special Collections Archivist II, Getty
-        </a>
-    </p>
-
-    <p>
-        <a href="https://joblist.ala.org/jobs/view/special-collections-conservator/82331283/" target="_blank">
-            Special Collections Conservator, University of Notre Dame
-        </a>
-    </p>
-
-    <h4>Senior-Level Positions</h4>
-    <p>
-        <a href="https://joblist.ala.org/jobs/view/head-of-research-and-instruction-hanna-holborn-gray-special-collections-research-center/82212316/" target="_blank">
-            Head of Research and Instruction, Hanna Holborn Gray Special Collections Research Center
-        </a>
-    </p>
-
-    <p>
-        <a href="https://joblist.ala.org/jobs/function/special/" target="_blank">
-            Assistant University Librarian for Special Collections, East Carolina University
-        </a>
-    </p>
-
-</div>
-</div>
+<!-- GRAPH BOX -->
 
 <div class="white-box graph-box">
 <div id="role-graph"></div>
@@ -106,121 +93,142 @@ body {
 
 </div>
 
-<!-- background artwork preview -->
-<div class="bg-preview" onclick="openSpotlight()">
-    <img src="images/background2.png" alt="Background artwork preview">
-</div>
-
-<!-- spotlight modal -->
-<div class="bg-spotlight" id="spotlight" onclick="closeSpotlight(event)">
-    <img src="images/background2.png" alt="Background artwork">
-
-    <div class="bg-caption">
-        A brochure cover for the Leimert Park Festival for the Arts c.1969.<br><br>
-        Knopka, R. (n.d.). <em>Outsiders Welcome: Brockman Gallery</em>.  
-        LAAC Collective.<br>
-        <a href="https://www.laacollective.org/work/outsiders-welcome-brockman-gallery" target="_blank">
-        https://www.laacollective.org/work/outsiders-welcome-brockman-gallery
-        </a>
-    </div>
-</div>
-
-<script>
-function openSpotlight(){
-    const s = document.getElementById("spotlight");
-    s.style.display = "flex";
-    s.classList.add("active");
-}
-
-function closeSpotlight(e){
-    if(e.target.id === "spotlight"){
-        const s = document.getElementById("spotlight");
-        s.style.display = "none";
-        s.classList.remove("active");
-    }
-}
-</script>
-
 <script>
 const cy = cytoscape({
   container: document.getElementById('role-graph'),
+
   zoomingEnabled: false,
   userZoomingEnabled: false,
   panningEnabled: false,
   userPanningEnabled: false,
   boxSelectionEnabled: false,
+
   elements: {
- nodes: [
-  { data: { id: 'Principal Librarian', type: 'role' } },
-  { data: { id: 'Assistant University Librarian', type: 'role' } },
-  { data: { id: 'Special Collections Archivist I', type: 'role' } },
-  { data: { id: 'senior-level role', type: 'category' } },
-  { data: { id: 'entry-level role', type: 'category' } },
-  { data: { id: 'temporary role', type: 'category' } },
-  { data: { id: 'permanent role', type: 'category' } },
-  { data: { id: 'rare books', type: 'collection' } },
-  { data: { id: 'archives', type: 'collection' } },
-  { data: { id: 'digital collections', type: 'collection' } },
-  { data: { id: 'University Archives', type: 'collection' } },
-  { data: { id: 'University Records Management', type: 'collection' } },
-  { data: { id: 'Latin American collections', type: 'collection' } },
-  { data: { id: 'Los Angeles Public Library', type: 'institution' } },
-  { data: { id: 'East Carolina University', type: 'institution' } },
-  { data: { id: 'Getty Research Institute', type: 'institution' } }
-],
-edges: [
-  { data: { source: 'Principal Librarian', target: 'senior-level role', label: 'is a' } },
-  { data: { source: 'Assistant University Librarian', target: 'senior-level role', label: 'is a' } },
-  { data: { source: 'Assistant University Librarian', target: 'permanent role', label: 'is a' } },
-  { data: { source: 'Special Collections Archivist I', target: 'temporary role', label: 'is a' } },
-  { data: { source: 'Special Collections Archivist I', target: 'entry-level role', label: 'is a' } },
-  { data: { source: 'Principal Librarian', target: 'rare books', label: 'oversees' } },
-  { data: { source: 'Principal Librarian', target: 'archives', label: 'oversees' } },
-  { data: { source: 'Principal Librarian', target: 'digital collections', label: 'oversees' } },
-  { data: { source: 'Assistant University Librarian', target: 'rare books', label: 'oversees' } },
-  { data: { source: 'Assistant University Librarian', target: 'archives', label: 'oversees' } },
-  { data: { source: 'Assistant University Librarian', target: 'digital collections', label: 'oversees' } },
-  { data: { source: 'Assistant University Librarian', target: 'University Archives', label: 'oversees' } },
-  { data: { source: 'Assistant University Librarian', target: 'University Records Management', label: 'oversees' } },
-  { data: { source: 'Special Collections Archivist I', target: 'archives', label: 'maintains' } },
-  { data: { source: 'Special Collections Archivist I', target: 'digital collections', label: 'maintains' } },
-  { data: { source: 'Los Angeles Public Library', target: 'Principal Librarian', label: 'employs' } },
-  { data: { source: 'East Carolina University', target: 'Assistant University Librarian', label: 'employs' } },
-  { data: { source: 'Los Angeles Public Library', target: 'rare books', label: 'houses' } },
-  { data: { source: 'Los Angeles Public Library', target: 'archives', label: 'houses' } },
-  { data: { source: 'Los Angeles Public Library', target: 'digital collections', label: 'houses' } },
-  { data: { source: 'East Carolina University', target: 'University Archives', label: 'houses' } },
-  { data: { source: 'East Carolina University', target: 'archives', label: 'houses' } },
-  { data: { source: 'East Carolina University', target: 'digital collections', label: 'houses' } },
-  { data: { source: 'Getty Research Institute', target: 'Latin American collections', label: 'houses' } },
-  { data: { source: 'Getty Research Institute', target: 'Special Collections Archivist I', label: 'employs' } }
-]
+    nodes: [
+      { data: { id: 'Principal Librarian', type: 'role' } },
+      { data: { id: 'Assistant University Librarian', type: 'role' } },
+      { data: { id: 'Special Collections Archivist I', type: 'role' } },
+      { data: { id: 'senior-level role', type: 'category' } },
+      { data: { id: 'entry-level role', type: 'category' } },
+      { data: { id: 'temporary role', type: 'category' } },
+      { data: { id: 'permanent role', type: 'category' } },
+      { data: { id: 'rare books', type: 'collection' } },
+      { data: { id: 'archives', type: 'collection' } },
+      { data: { id: 'digital collections', type: 'collection' } },
+      { data: { id: 'University Archives', type: 'collection' } },
+      { data: { id: 'University Records Management', type: 'collection' } },
+      { data: { id: 'Latin American collections', type: 'collection' } },
+      { data: { id: 'Los Angeles Public Library', type: 'institution' } },
+      { data: { id: 'East Carolina University', type: 'institution' } },
+      { data: { id: 'Getty Research Institute', type: 'institution' } }
+    ],
+
+    edges: [
+      { data: { source: 'Principal Librarian', target: 'senior-level role', label: 'is a' } },
+      { data: { source: 'Assistant University Librarian', target: 'senior-level role', label: 'is a' } },
+      { data: { source: 'Assistant University Librarian', target: 'permanent role', label: 'is a' } },
+      { data: { source: 'Special Collections Archivist I', target: 'temporary role', label: 'is a' } },
+      { data: { source: 'Special Collections Archivist I', target: 'entry-level role', label: 'is a' } },
+
+      { data: { source: 'Principal Librarian', target: 'rare books', label: 'oversees' } },
+      { data: { source: 'Principal Librarian', target: 'archives', label: 'oversees' } },
+      { data: { source: 'Principal Librarian', target: 'digital collections', label: 'oversees' } },
+
+      { data: { source: 'Assistant University Librarian', target: 'rare books', label: 'oversees' } },
+      { data: { source: 'Assistant University Librarian', target: 'archives', label: 'oversees' } },
+      { data: { source: 'Assistant University Librarian', target: 'digital collections', label: 'oversees' } },
+      { data: { source: 'Assistant University Librarian', target: 'University Archives', label: 'oversees' } },
+      { data: { source: 'Assistant University Librarian', target: 'University Records Management', label: 'oversees' } },
+
+      { data: { source: 'Special Collections Archivist I', target: 'archives', label: 'maintains' } },
+      { data: { source: 'Special Collections Archivist I', target: 'digital collections', label: 'maintains' } },
+
+      { data: { source: 'Los Angeles Public Library', target: 'Principal Librarian', label: 'employs' } },
+      { data: { source: 'East Carolina University', target: 'Assistant University Librarian', label: 'employs' } },
+
+      { data: { source: 'Los Angeles Public Library', target: 'rare books', label: 'houses' } },
+      { data: { source: 'Los Angeles Public Library', target: 'archives', label: 'houses' } },
+      { data: { source: 'Los Angeles Public Library', target: 'digital collections', label: 'houses' } },
+
+      { data: { source: 'East Carolina University', target: 'University Archives', label: 'houses' } },
+      { data: { source: 'East Carolina University', target: 'archives', label: 'houses' } },
+      { data: { source: 'East Carolina University', target: 'digital collections', label: 'houses' } },
+
+      { data: { source: 'Getty Research Institute', target: 'Latin American collections', label: 'houses' } },
+      { data: { source: 'Getty Research Institute', target: 'Special Collections Archivist I', label: 'employs' } }
+    ]
   },
+
   style: [
-    { selector:'node', style:{'label':'data(id)','font-family':'Atkinson Hyperlegible','font-size':'12px','text-wrap':'wrap','text-max-width':'90px','text-valign':'center','text-halign':'center','width':70,'height':70} },
-    { selector:'node[type="role"]', style:{'background-color':'#1F6DB1','color':'white'} },
-    { selector:'node[type="collection"]', style:{'background-color':'#F7DA00','color':'black'} },
-    { selector:'node[type="activity"]', style:{'background-color':'#4B2E83','color':'white'} },
-    { selector:'node[type="institution"]', style:{'background-color':'#4B2E83','color':'white'} },
-    { selector:'edge', style:{'curve-style':'bezier','target-arrow-shape':'triangle','line-color':'red','target-arrow-color':'red','label':'data(label)','font-family':'Atkinson Hyperlegible','font-size':'10px','color':'red','text-background-opacity':0,'text-margin-y':-8} }
+    {
+      selector: 'node',
+      style: {
+        'label': 'data(id)',
+        'text-wrap': 'wrap',
+        'text-max-width': '90px',
+        'text-valign': 'center',
+        'text-halign': 'center',
+        'width': 70,
+        'height': 70,
+        'font-size': '12px'
+      }
+    },
+    { selector: 'node[type="role"]', style: { 'background-color': '#1F6DB1', 'color': 'white' } },
+    { selector: 'node[type="collection"]', style: { 'background-color': '#F7DA00', 'color': 'black' } },
+    { selector: 'node[type="institution"]', style: { 'background-color': '#4B2E83', 'color': 'white' } },
+
+    {
+      selector: 'edge',
+      style: {
+        'curve-style': 'bezier',
+        'target-arrow-shape': 'triangle',
+        'line-color': 'red',
+        'target-arrow-color': 'red',
+        'label': 'data(label)',
+        'font-size': '10px',
+        'color': 'red',
+        'text-margin-y': -8
+      }
+    }
   ],
-  layout:{ name:'cose', padding:100 }
+
+  layout: {
+    name: 'cose',
+    fit: true,
+    padding: 80,
+    nodeRepulsion: 800000,
+    idealEdgeLength: 180,
+    gravity: 0.2,
+    numIter: 2000,
+    animate: false
+  }
 });
 
+/* Emphasize main node */
 const mainNode = cy.getElementById('Principal Librarian');
-mainNode.style({ width:140, height:140, 'font-size':'16px' });
+mainNode.style({ width: 140, height: 140, 'font-size': '16px' });
 
-cy.on('tap','node', function(evt){
-  let node = evt.target;
-  cy.nodes().forEach(n => { 
-    n.animate({ style:{width:70,height:70,'font-size':'12px'} }, {duration:200}); 
-  });
-  node.animate({ style:{width:140,height:140,'font-size':'16px'} }, {duration:200});
+/* Guarantee everything fits and centers */
+cy.ready(() => {
+  cy.fit(undefined, 80);
+});
+
+/* Click-to-enlarge interaction */
+cy.on('tap', 'node', function(evt) {
+  cy.nodes().forEach(n =>
+    n.animate({ style: { width: 70, height: 70, 'font-size': '12px' } }, { duration: 200 })
+  );
+
+  evt.target.animate(
+    { style: { width: 140, height: 140, 'font-size': '16px' } },
+    { duration: 200 }
+  );
 });
 </script>
 
 </body>
 </html>
+
 
 
 
