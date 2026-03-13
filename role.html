@@ -226,7 +226,17 @@ const cy = cytoscape({
     { selector:'node[type="institution"]', style:{'background-color':'#4B2E83','color':'white'} },
     { selector:'edge', style:{'curve-style':'bezier','target-arrow-shape':'triangle','line-color':'red','target-arrow-color':'red','label':'data(label)','font-family':'Atkinson Hyperlegible','font-size':'10px','color':'red','text-background-opacity':0,'text-margin-y':-8} }
   ],
-  layout:{ name:'cose', padding:100 }
+layout: {
+  name: 'cose',
+  padding: 200,                 // more room around the graph
+  idealEdgeLength: 140,         // longer edges → nodes spread apart
+  nodeRepulsion: 12000,         // nodes push each other further
+  edgeElasticity: 0.9,          // slightly stiffer edges
+  gravity: 0.1,                 // keeps graph from drifting too far
+  nestingFactor: 0.7,           // reduces overlap
+  animate: true,                // smooth animation
+  animationDuration: 1000
+}
 });
 
 const mainNode = cy.getElementById('Principal Librarian');
@@ -243,6 +253,7 @@ cy.on('tap','node', function(evt){
 
 </body>
 </html>
+
 
 
 
