@@ -414,4 +414,25 @@ body {
     height:700px;
 }
 
+.return-top{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+}
+
+.return-top img{
+    width: 70px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.return-top img:hover{
+    transform: scale(1.1);
+}
+
+html{
+    scroll-behavior: smooth;
+}
 
