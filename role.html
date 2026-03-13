@@ -150,128 +150,185 @@ const cy = cytoscape({
 
 container: document.getElementById('role-graph'),
 
+zoomingEnabled: false,
+userZoomingEnabled: false,
+panningEnabled: false,
+userPanningEnabled: false,
+boxSelectionEnabled: false,
+
 elements: {
 
 nodes: [
-{ data: { id: 'Principal Librarian' } },
-{ data: { id: 'rare books' } },
-{ data: { id: 'archives' } },
-{ data: { id: 'digital collections' } },
-{ data: { id: 'public library system' } },
-{ data: { id: 'library administration' } },
-{ data: { id: 'archival stewardship' } },
-{ data: { id: 'grant development' } },
-{ data: { id: 'exhibitions' } },
-{ data: { id: 'technology systems' } },
-{ data: { id: 'Getty' } },
-{ data: { id: 'University of Notre Dame' } },
-{ data: { id: 'East Carolina University' } }
+
+{ data: { id: 'Principal Librarian', type:'role'} },
+
+{ data: { id: 'rare books', type:'collection'} },
+{ data: { id: 'archives', type:'collection'} },
+{ data: { id: 'digital collections', type:'collection'} },
+
+{ data: { id: 'library administration', type:'activity'} },
+{ data: { id: 'archival stewardship', type:'activity'} },
+{ data: { id: 'grant development', type:'activity'} },
+{ data: { id: 'exhibitions', type:'activity'} },
+{ data: { id: 'technology systems', type:'activity'} },
+
+{ data: { id: 'Getty', type:'institution'} },
+{ data: { id: 'University of Notre Dame', type:'institution'} },
+{ data: { id: 'East Carolina University', type:'institution'} }
+
 ],
 
 edges: [
-{ data: { source: 'Principal Librarian', target: 'rare books', label: 'oversees' } },
-{ data: { source: 'Principal Librarian', target: 'archives', label: 'oversees' } },
-{ data: { source: 'Principal Librarian', target: 'digital collections', label: 'oversees' } },
-{ data: { source: 'Principal Librarian', target: 'public library system', label: 'works in' } },
-{ data: { source: 'Principal Librarian', target: 'library administration', label: 'involves' } },
-{ data: { source: 'Principal Librarian', target: 'archival stewardship', label: 'involves' } },
-{ data: { source: 'Principal Librarian', target: 'grant development', label: 'involves' } },
-{ data: { source: 'Principal Librarian', target: 'exhibitions', label: 'organizes' } },
-{ data: { source: 'Principal Librarian', target: 'technology systems', label: 'manages' } },
 
-{ data: { source: 'Getty', target: 'archives', label: 'employs archivists' } },
-{ data: { source: 'University of Notre Dame', target: 'archives', label: 'maintains' } },
-{ data: { source: 'East Carolina University', target: 'archives', label: 'maintains' } }
+{ data: { source:'Principal Librarian', target:'rare books', label:'oversees'} },
+{ data: { source:'Principal Librarian', target:'archives', label:'oversees'} },
+{ data: { source:'Principal Librarian', target:'digital collections', label:'oversees'} },
+
+{ data: { source:'Principal Librarian', target:'library administration', label:'manages'} },
+{ data: { source:'Principal Librarian', target:'archival stewardship', label:'manages'} },
+{ data: { source:'Principal Librarian', target:'grant development', label:'develops'} },
+{ data: { source:'Principal Librarian', target:'exhibitions', label:'organizes'} },
+{ data: { source:'Principal Librarian', target:'technology systems', label:'manages'} },
+
+{ data: { source:'Getty', target:'archives', label:'maintains'} },
+{ data: { source:'University of Notre Dame', target:'archives', label:'maintains'} },
+{ data: { source:'East Carolina University', target:'archives', label:'maintains'} }
+
 ]
 
 },
 
 style: [
 
-/* ROLE */
+/* GENERAL NODE STYLE */
+
 {
-selector: 'node[id = "Principal Librarian"]',
+selector:'node',
+style:{
+'label':'data(id)',
+'font-family':'Atkinson Hyperlegible',
+'font-size':'12px',
+'text-wrap':'wrap',
+'text-max-width':'90px',
+'text-valign':'center',
+'text-halign':'center',
+'width':70,
+'height':70
+}
+},
+
+/* ROLE NODE (BLUE) */
+
+{
+selector:'node[type="role"]',
 style:{
 'background-color':'#1F6DB1',
-'label':'data(id)',
-'color':'#fff',
-'text-valign':'center',
-'text-halign':'center',
-'font-size':'11px',
-'width':'label',
-'padding':'10px'
+'color':'white'
 }
 },
 
-/* COLLECTIONS */
+/* COLLECTIONS (YELLOW) */
+
 {
-selector: 'node[id = "rare books"], node[id = "archives"], node[id = "digital collections"]',
+selector:'node[type="collection"]',
 style:{
 'background-color':'#F7DA00',
-'label':'data(id)',
-'color':'#000',
-'text-valign':'center',
-'text-halign':'center',
-'font-size':'11px',
-'width':'label',
-'padding':'10px'
+'color':'black'
 }
 },
 
-/* ACTIVITIES */
+/* ACTIVITIES (PURPLE) */
+
 {
-selector: 'node[id = "library administration"], node[id = "archival stewardship"], node[id = "grant development"], node[id = "exhibitions"], node[id = "technology systems"]',
+selector:'node[type="activity"]',
 style:{
-'background-color':'#78C4BC',
-'label':'data(id)',
-'color':'#000',
-'text-valign':'center',
-'text-halign':'center',
-'font-size':'11px',
-'width':'label',
-'padding':'10px'
+'background-color':'#4B2E83',
+'color':'white'
 }
 },
 
-/* INSTITUTIONS */
+/* INSTITUTIONS (PURPLE ALSO) */
+
 {
-selector: 'node[id = "Getty"], node[id = "University of Notre Dame"], node[id = "East Carolina University"]',
+selector:'node[type="institution"]',
 style:{
-'background-color':'#775395',
-'label':'data(id)',
-'color':'#fff',
-'text-valign':'center',
-'text-halign':'center',
-'font-size':'11px',
-'width':'label',
-'padding':'10px'
+'background-color':'#4B2E83',
+'color':'white'
 }
 },
 
+/* EDGE STYLE */
+
 {
-selector: 'edge',
-style: {
-'label': 'data(label)',
-'curve-style': 'bezier',
-'target-arrow-shape': 'triangle',
-'line-color': '#999',
-'target-arrow-color': '#999',
-'font-size': '9px'
+selector:'edge',
+style:{
+'curve-style':'bezier',
+'target-arrow-shape':'triangle',
+'line-color':'red',
+'target-arrow-color':'red',
+'label':'data(label)',
+'font-family':'Atkinson Hyperlegible',
+'font-size':'10px',
+'color':'red',
+'text-background-opacity':0,
+'text-margin-y':-8
 }
 }
 
 ],
 
-layout: {
-name: 'cose',
-padding: 40
+layout:{
+name:'cose',
+padding:60
 }
 
 });
 
+
+/* START WITH MAIN NODE LARGER */
+
+const mainNode = cy.getElementById('Principal Librarian');
+
+mainNode.style({
+width:140,
+height:140,
+'font-size':'16px'
+});
+
+
+/* CLICK NODE TO EXPAND */
+
+cy.on('tap','node', function(evt){
+
+let node = evt.target;
+
+cy.nodes().forEach(n => {
+
+n.animate({
+style:{
+width:70,
+height:70,
+'font-size':'12px'
+}
+}, {duration:200});
+
+});
+
+node.animate({
+style:{
+width:140,
+height:140,
+'font-size':'16px'
+}
+}, {duration:200});
+
+});
+
+
 </script>
 </body>
 </html>
+
 
 
 
