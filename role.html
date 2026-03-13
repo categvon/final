@@ -189,17 +189,63 @@ edges: [
 
 style: [
 
+/* ROLE */
 {
-selector: 'node',
-style: {
-'label': 'data(id)',
-'background-color': '#2563eb',
-'text-valign': 'center',
-'text-halign': 'center',
-'color': '#000',
-'font-size': '11px',
-'width': 'label',
-'padding': '10px'
+selector: 'node[id = "Principal Librarian"]',
+style:{
+'background-color':'#1F6DB1',
+'label':'data(id)',
+'color':'#fff',
+'text-valign':'center',
+'text-halign':'center',
+'font-size':'11px',
+'width':'label',
+'padding':'10px'
+}
+},
+
+/* COLLECTIONS */
+{
+selector: 'node[id = "rare books"], node[id = "archives"], node[id = "digital collections"]',
+style:{
+'background-color':'#F7DA00',
+'label':'data(id)',
+'color':'#000',
+'text-valign':'center',
+'text-halign':'center',
+'font-size':'11px',
+'width':'label',
+'padding':'10px'
+}
+},
+
+/* ACTIVITIES */
+{
+selector: 'node[id = "library administration"], node[id = "archival stewardship"], node[id = "grant development"], node[id = "exhibitions"], node[id = "technology systems"]',
+style:{
+'background-color':'#78C4BC',
+'label':'data(id)',
+'color':'#000',
+'text-valign':'center',
+'text-halign':'center',
+'font-size':'11px',
+'width':'label',
+'padding':'10px'
+}
+},
+
+/* INSTITUTIONS */
+{
+selector: 'node[id = "Getty"], node[id = "University of Notre Dame"], node[id = "East Carolina University"]',
+style:{
+'background-color':'#775395',
+'label':'data(id)',
+'color':'#fff',
+'text-valign':'center',
+'text-halign':'center',
+'font-size':'11px',
+'width':'label',
+'padding':'10px'
 }
 },
 
@@ -218,7 +264,7 @@ style: {
 ],
 
 layout: {
-name: 'cose',
+name: 'cose-bilkent'
 padding: 40
 }
 
@@ -229,6 +275,7 @@ padding: 40
 </html>
 </body>
 </html>
+
 
 
 
