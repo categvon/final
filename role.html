@@ -204,7 +204,11 @@ edges: [
     { selector:'node[type="institution"]', style:{'background-color':'#4B2E83','color':'white'} },
     { selector:'edge', style:{'curve-style':'bezier','target-arrow-shape':'triangle','line-color':'red','target-arrow-color':'red','label':'data(label)','font-family':'Atkinson Hyperlegible','font-size':'10px','color':'red','text-background-opacity':0,'text-margin-y':-8} }
   ],
-  layout:{ name:'cose', padding:130 }
+  layout:{ 
+  name:'cose', 
+  padding:130,
+  fit: true
+}
 });
 
 const mainNode = cy.getElementById('Principal Librarian');
@@ -221,6 +225,7 @@ cy.on('tap','node', function(evt){
 
 </body>
 </html>
+
 
 
 
